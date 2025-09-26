@@ -1,17 +1,61 @@
- import { Link } from "react-router-dom";
+import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
 function Navbar() {
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 8);
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
+  const base = "sticky top-0 z-50 transition-all duration-300 backdrop-blur-md";
+  const bg = scrolled
+    ? "rgba(15, 23, 42, 0.8)" // surface 80%
+    : "transparent";
+  const borderColor = scrolled ? "rgba(31, 41, 55, 0.6)" : "transparent";
+
   return (
-    <nav className="p-4 bg-white shadow flex justify-between items-center">
-      <Link to="/" className="flex items-center">
-        <h1 className="text-xl font-bold">Carlos James <span className="text-blue-500">Alanano</span></h1>
-      </Link>
-      <ul className="flex gap-6">
-        <li><Link to="/" className="hover:text-blue-500">Home</Link></li>
-        <li><Link to="/about" className="hover:text-blue-500">About</Link></li>
-        <li><Link to="/projects" className="hover:text-blue-500">Projects</Link></li>
-        <li><Link to="/contact" className="hover:text-blue-500">Contact</Link></li>
-      </ul>
+    <nav
+      className={base}
+      style={{
+        backgroundColor: bg,
+        borderBottom: `1px solid ${borderColor}`,
+      }}
+      aria-label="Primary Navigation"
+    >
+      <div className="container-page">
+        <div className="flex h-16 items-center justify-between">
+          <Link to="/" className="flex items-center gap-2" aria-label="Go to home">
+            <h1 className="text-xl md:text-2xl font-semibold tracking-tight" style={{ color: "var(--text)" }}>
+              Carlos James <span style={{ color: "var(--accent)" }}>Alanano</span>
+            </h1>
+          </Link>
+
+          <ul className="hidden md:flex items-center gap-6">
+            {[
+              { to: "/", label: "Home" },
+              { to: "/about", label: "About" },
+              { to: "/projects", label: "Projects" },
+              { to: "/contact", label: "Contact" },
+            ].map((item) => (
+              <li key={item.to}>
+                <Link
+                  to={item.to}
+                  className="transition-colors"
+                  style={{ color: "var(--muted)" }}
+                  onMouseEnter={(e) => (e.currentTarget.style.color = "var(--accent)")}
+                  onMouseLeave={(e) => (e.currentTarget.style.color = "var(--muted)")}
+                >
+                  {item.label}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
     </nav>
   );
 }

@@ -3,19 +3,37 @@ import React from "react";
 
 const Contact = () => {
     return (
-        <section className="flex flex-col items-center text-center py-20">
-            <h2 className="text-4xl font-bold mb-6">Contact Me</h2>
-            <p className="text-lg text-gray-600">Feel free to reach out via email or LinkedIn!</p>
-            <div className="mt-6 space-x-4">
-                <a href="mailto:cjalanano.dev@gmail.com" className="px-6 py-2 bg-blue-500 text-white rounded-lg shadow hover:bg-blue-600">
-                    Email Me
-                </a>
-                <a href="https://www.linkedin.com/in/cjalanano-dev/" target="_blank" rel="noopener noreferrer" className="px-6 py-2 bg-blue-500 text-white rounded-lg shadow hover:bg-blue-600">
-                    LinkedIn
-                </a>
+        <section className="py-16">
+            <div className="container-page">
+                <div className="mx-auto max-w-2xl text-center">
+                    <h2 className="text-3xl md:text-4xl font-bold" style={{ color: "var(--text)" }}>Contact Me</h2>
+                    <p className="mt-4" style={{ color: "var(--muted)" }}>
+                        I’m open to opportunities, collaborations, or just a good tech chat. Let’s connect.
+                    </p>
+                    <div className="mt-8 flex items-center justify-center gap-4">
+                        <a
+                            href="mailto:cjalanano.dev@gmail.com"
+                            className="px-5 py-2 rounded-md"
+                            style={{ background: "var(--accent)", color: "#001015" }}
+                        >
+                            Email Me
+                        </a>
+                        <a
+                            href="https://www.linkedin.com/in/cjalanano-dev/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="px-5 py-2 rounded-md border"
+                            style={{ borderColor: "var(--border)", color: "var(--text)" }}
+                            onMouseEnter={(e) => (e.currentTarget.style.borderColor = "var(--accent)")}
+                            onMouseLeave={(e) => (e.currentTarget.style.borderColor = "var(--border)")}
+                        >
+                            LinkedIn
+                        </a>
+                    </div>
+                </div>
             </div>
         </section>
     );
-}
+};
 
 export default Contact;
