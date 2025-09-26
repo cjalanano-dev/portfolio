@@ -13,6 +13,7 @@ function AppShell() {
   const [loading, setLoading] = useState(true);
   const location = useLocation();
   const firstPaint = useRef(true);
+  const prevLocation = useRef({ pathname: location.pathname, search: location.search, hash: location.hash });
 
   useEffect(() => {
     // Simulate a short initial loading to show the animation elegantly
@@ -27,10 +28,25 @@ function AppShell() {
 
   useEffect(() => {
     if (!firstPaint.current) {
-      setLoading(true);
-      const t = setTimeout(() => setLoading(false), 400);
-      return () => clearTimeout(t);
+      const pathOrSearchChanged =
+        location.pathname !== prevLocation.current.pathname ||
+        location.search !== prevLocation.current.search;
+
+      if (pathOrSearchChanged) {
+        setLoading(true);
+        const t = setTimeout(() => setLoading(false), 400);
+        return () => clearTimeout(t);
+      } else {
+        // Only hash changed (in-page anchor). Do not trigger loader.
+        setLoading(false);
+      }
     }
+    // Update the previous location tracker after handling
+    prevLocation.current = {
+      pathname: location.pathname,
+      search: location.search,
+      hash: location.hash,
+    };
   }, [location]);
 
   return (

@@ -1,4 +1,5 @@
 import React from 'react';
+import { FaGithub, FaLinkedin, FaEnvelope } from 'react-icons/fa6';
 
 const linkBase = {
     color: "var(--muted)",
@@ -21,34 +22,46 @@ const Footer = () => (
         <div style={{ color: "var(--text)" }}>
             &copy; {new Date().getFullYear()} Carlos James Alanano. All rights reserved.
         </div>
-        <div style={{ marginTop: "0.5rem", fontSize: "0.9rem" }}>
+        <div style={{ marginTop: "0.5rem", fontSize: "1.3rem" }}>
             <a
                 href="https://github.com/cjalanano-dev"
                 target="_blank"
                 rel="noopener noreferrer"
                 style={linkBase}
+                className="footer-link"
                 onMouseEnter={(e) => (e.currentTarget.style.color = "var(--accent)")}
                 onMouseLeave={(e) => (e.currentTarget.style.color = "var(--muted)")}
             >
-                GitHub
+                <span className="footer-icon" style={{ display: 'inline-flex', alignItems: 'center', marginRight: 6 }}>
+                  <FaGithub />
+                </span>
+                <span className="footer-label"></span>
             </a>
             <a
                 href="https://linkedin.com/in/cjalanano-dev"
                 target="_blank"
                 rel="noopener noreferrer"
                 style={linkBase}
+                className="footer-link"
                 onMouseEnter={(e) => (e.currentTarget.style.color = "var(--accent)")}
                 onMouseLeave={(e) => (e.currentTarget.style.color = "var(--muted)")}
             >
-                LinkedIn
+                <span className="footer-icon" style={{ display: 'inline-flex', alignItems: 'center', marginRight: 6 }}>
+                  <FaLinkedin />
+                </span>
+                <span className="footer-label"></span>
             </a>
             <a
                 href="mailto:cjalanano.dev@gmail.com"
                 style={linkBase}
+                className="footer-link"
                 onMouseEnter={(e) => (e.currentTarget.style.color = "var(--accent)")}
                 onMouseLeave={(e) => (e.currentTarget.style.color = "var(--muted)")}
             >
-                Email
+                <span className="footer-icon" style={{ display: 'inline-flex', alignItems: 'center', marginRight: 6 }}>
+                  <FaEnvelope />
+                </span>
+                <span className="footer-label"></span>
             </a>
         </div>
     </footer>
