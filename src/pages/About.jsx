@@ -48,6 +48,32 @@ const About = () => {
                     <h2 className="text-3xl sm:text-4xl font-bold leading-tight tracking-tight-lg tracking-tighter-xl" style={{ color: "var(--text)" }}>
                         About Me
                     </h2>
+
+                    <nav aria-label="About page sections" className="mt-6 sm:mt-7 flex flex-wrap items-center justify-center gap-2.5 sm:gap-3">
+                        {[
+                            { href: "#intro", label: "Intro" },
+                            { href: "#education", label: "Education" },
+                            { href: "#experience", label: "Experiences" },
+                            { href: "#services", label: "Services" },
+                        ].map((l) => {
+                            const isActive = active === l.href;
+                            return (
+                                <a
+                                    key={l.href}
+                                    href={l.href}
+                                    className="px-3 py-1.5 rounded-md text-sm border"
+                                    style={{
+                                        borderColor: isActive ? "var(--accent)" : "var(--border)",
+                                        color: isActive ? "var(--text)" : "var(--muted)",
+                                        background: isActive ? "rgba(34,211,238,0.08)" : "transparent",
+                                        boxShadow: isActive ? "0 0 0 6px rgba(34,211,238,0.08)" : "none",
+                                    }}
+                                >
+                                    {l.label}
+                                </a>
+                            );
+                        })}
+                    </nav>
                 </div>
 
                 {/* 1. Intro about me */}
