@@ -33,6 +33,29 @@ body {
 
 a { transition: color 0.2s ease, background-color 0.2s ease, border-color 0.2s ease; }
 
+/* Background canvas: soft gradients + subtle grid */
+.background-canvas {
+	position: fixed;
+	inset: 0;
+	pointer-events: none;
+	z-index: -1;
+	/* Layered gradients: base -> glows */
+	background:
+		radial-gradient(1200px 600px at 10% -10%, rgba(34,211,238,0.10), rgba(34,211,238,0.00) 45%),
+		radial-gradient(900px 500px at 90% 110%, rgba(34,211,238,0.07), rgba(34,211,238,0.00) 40%),
+		linear-gradient(180deg, #0b0f19 0%, #0a0e17 100%);
+}
+.background-canvas::before {
+	content: "";
+	position: absolute;
+	inset: 0;
+	background-image:
+		linear-gradient(to bottom, rgba(148,163,184,0.05) 1px, transparent 1px),
+		linear-gradient(to right, rgba(148,163,184,0.05) 1px, transparent 1px);
+	background-size: 24px 24px;
+	opacity: 0.35; /* overall grid strength */
+}
+
 /* Subtle card elevate/hover */
 .card-elevate {
 	transition: transform 180ms ease, box-shadow 200ms ease, border-color 180ms ease;
@@ -57,34 +80,7 @@ a { transition: color 0.2s ease, background-color 0.2s ease, border-color 0.2s e
 	filter: drop-shadow(0 0 10px rgba(34,211,238,0.35));
 }
 
-/* Timeline visuals for Experiences */
-.timeline {
-	position: relative;
-}
-.timeline::before {
-	content: "";
-	position: absolute;
-	left: 10px;
-	top: 0;
-	bottom: 0;
-	width: 2px;
-	background: linear-gradient(180deg, rgba(34,211,238,0.35), rgba(34,211,238,0.05));
-}
-.timeline-item {
-	position: relative;
-	padding-left: 2.5rem; /* space for marker */
-}
-.timeline-marker {
-	position: absolute;
-	left: 2px;
-	top: 0.9rem;
-	width: 16px;
-	height: 16px;
-	border-radius: 9999px;
-	border: 2px solid var(--accent);
-	background: radial-gradient(circle at center, rgba(34,211,238,0.9), rgba(34,211,238,0.1));
-	box-shadow: 0 0 0 6px rgba(34,211,238,0.12), 0 0 18px rgba(34,211,238,0.35);
-}
+/* (Timeline visuals removed) */
 
 /* Helpers */
 .container-page { max-width: 80rem; margin-left: auto; margin-right: auto; padding-left: 1rem; padding-right: 1rem; }

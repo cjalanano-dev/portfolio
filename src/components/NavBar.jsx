@@ -1,10 +1,17 @@
-import { useEffect, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 
 function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
   const location = useLocation();
+  const pathname = location.pathname;
+  const navItems = useMemo(() => ([
+    { to: "/", label: "Home" },
+    { to: "/about", label: "About" },
+    { to: "/projects", label: "Projects" },
+    { to: "/contact", label: "Contact" },
+  ]), []);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 8);
@@ -47,27 +54,54 @@ function Navbar() {
             </h1>
           </Link>
 
-          {/* Desktop nav */}
-          <ul className="hidden md:flex items-center gap-6">
-            {[
-              { to: "/", label: "Home" },
-              { to: "/about", label: "About" },
-              { to: "/projects", label: "Projects" },
-              { to: "/contact", label: "Contact" },
-            ].map((item) => (
-              <li key={item.to}>
-                <Link
-                  to={item.to}
-                  className="transition-colors"
-                  style={{ color: "var(--muted)" }}
-                  onMouseEnter={(e) => (e.currentTarget.style.color = "var(--accent)")}
-                  onMouseLeave={(e) => (e.currentTarget.style.color = "var(--muted)")}
-                >
-                  {item.label}
-                </Link>
-              </li>
-            ))}
-          </ul>
+          {/* Desktop nav: glass group */}
+          <div className="hidden md:flex items-center">
+            <div
+              className="rounded-full p-1 flex items-center gap-1"
+              style={{
+                background: "rgba(15,23,42,0.55)",
+                border: "1px solid var(--border)",
+                boxShadow: "0 8px 28px rgba(0,0,0,0.25)",
+              }}
+              role="menubar"
+              aria-label="Primary"
+            >
+              {navItems.map((item) => {
+                const isActive = item.to === "/" ? pathname === "/" : pathname.startsWith(item.to);
+                return (
+                  <Link
+                    key={item.to}
+                    to={item.to}
+                    role="menuitem"
+                    aria-current={isActive ? "page" : undefined}
+                    className="px-4 py-1.5 rounded-full text-sm transition-all"
+                    style={{
+                      color: isActive ? "var(--text)" : "var(--muted)",
+                      border: `1px solid ${isActive ? "var(--accent)" : "transparent"}`,
+                      background: isActive ? "rgba(34,211,238,0.08)" : "transparent",
+                      boxShadow: isActive ? "0 0 0 6px rgba(34,211,238,0.08)" : "none",
+                    }}
+                    onMouseEnter={(e) => {
+                      if (!isActive) {
+                        e.currentTarget.style.color = "var(--text)";
+                        e.currentTarget.style.background = "rgba(148,163,184,0.08)";
+                        e.currentTarget.style.borderColor = "var(--border)";
+                      }
+                    }}
+                    onMouseLeave={(e) => {
+                      if (!isActive) {
+                        e.currentTarget.style.color = "var(--muted)";
+                        e.currentTarget.style.background = "transparent";
+                        e.currentTarget.style.borderColor = "transparent";
+                      }
+                    }}
+                  >
+                    {item.label}
+                  </Link>
+                );
+              })}
+            </div>
+          </div>
 
           {/* Mobile toggle */}
           <button
@@ -111,30 +145,30 @@ function Navbar() {
         <div
           className="md:hidden animate-slide-fade-in"
           style={{
-            background: 'rgba(15,23,42,0.98)',
-            borderBottom: '1px solid var(--border)'
+            background: 'rgba(15,23,42,0.85)',
+            borderBottom: '1px solid var(--border)',
+            borderTop: '1px solid var(--border)'
           }}
         >
           <div className="container-page">
             <ul className="py-3 flex flex-col gap-1">
-              {[
-                { to: "/", label: "Home" },
-                { to: "/about", label: "About" },
-                { to: "/projects", label: "Projects" },
-                { to: "/contact", label: "Contact" },
-              ].map((item) => (
+              {navItems.map((item) => {
+                const isActive = item.to === "/" ? pathname === "/" : pathname.startsWith(item.to);
+                return (
                 <li key={item.to}>
                   <Link
                     to={item.to}
-                    className="block w-full px-2 py-2 rounded-md"
-                    style={{ color: 'var(--text)' }}
-                    onMouseEnter={(e) => (e.currentTarget.style.background = 'rgba(34,211,238,0.08)')}
-                    onMouseLeave={(e) => (e.currentTarget.style.background = 'transparent')}
+                    className="block w-full px-3 py-2 rounded-md border"
+                    style={{
+                      color: isActive ? 'var(--text)' : 'var(--muted)',
+                      background: isActive ? 'rgba(34,211,238,0.08)' : 'transparent',
+                      borderColor: isActive ? 'var(--accent)' : 'var(--border)'
+                    }}
                   >
                     {item.label}
                   </Link>
                 </li>
-              ))}
+              );})}
             </ul>
           </div>
         </div>

@@ -12,16 +12,10 @@ const About = () => {
     const { hash } = useLocation();
     const [showBackToTop, setShowBackToTop] = useState(false);
 
-    // Determine active tab based on URL hash for visual feedback
-    const active = useMemo(() => (hash || "#intro"), [hash]);
+    // Determine active tab based on URL hash for visual feedback (no default to Intro)
+    const active = useMemo(() => (hash || ""), [hash]);
 
-    useEffect(() => {
-        // If user lands on About without hash, ensure we start at Intro
-        if (!hash && typeof window !== 'undefined') {
-            const el = document.getElementById('intro');
-            if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        }
-    }, [hash]);
+    // Removed auto-scroll to #intro so landing on /about shows the top heading
 
     useEffect(() => {
         // Show the back-to-top button only when near the bottom of the page
@@ -48,6 +42,9 @@ const About = () => {
                     <h2 className="text-3xl sm:text-4xl font-bold leading-tight tracking-tight-lg tracking-tighter-xl" style={{ color: "var(--text)" }}>
                         About Me
                     </h2>
+                    <p className="mt-2.5 sm:mt-3 text-base sm:text-lg" style={{ color: "var(--muted)" }}>
+                        A bit about my background, skills, experiences, and the services I offer.
+                    </p>
                 </div>
 
                 {/* 1. Intro about me */}
@@ -103,13 +100,39 @@ const About = () => {
                     </div>
                 </section>
 
+                {/* 2.5 Skills */}
+                <section id="skills" style={{ scrollMarginTop: "6rem" }} className="mt-10 sm:mt-12">
+                    <div className="mx-auto max-w-5xl">
+                        <div className="flex items-center gap-2 mb-4">
+                            <h3 className="text-2xl sm:text-3xl font-semibold tracking-tight accent-underline" style={{ color: "var(--text)" }}>Skills</h3>
+                        </div>
+                        <div className="grid gap-4 sm:gap-5 md:grid-cols-2">
+                            {[
+                                "Backend Development",
+                                "CRUD Systems",
+                                "Python",
+                                "JavaScript / React",
+                                "SQL / MySQL",
+                                "Git / GitHub",
+                                "HTML / CSS",
+                                "Blockchain Basics",
+                            ].map((s) => (
+                                <div key={s} className="p-4 sm:p-5 card-elevate flex items-center gap-3" style={cardStyle}>
+                                    <span style={{ width: 8, height: 8, borderRadius: 9999, background: "var(--accent)" }} />
+                                    <div className="font-medium" style={{ color: "var(--text)" }}>{s}</div>
+                                </div>
+                            ))}
+                        </div>
+                    </div>
+                </section>
+
                 {/* 3. Experiences */}
                 <section id="experience" style={{ scrollMarginTop: "6rem" }} className="mt-10 sm:mt-12">
                     <div className="mx-auto max-w-5xl">
                         <div className="flex items-center gap-2 mb-4">
                             <h3 className="text-2xl sm:text-3xl font-semibold tracking-tight accent-underline" style={{ color: "var(--text)" }}>Experiences</h3>
                         </div>
-                        <div className="grid gap-4 sm:gap-5 lg:grid-cols-2 timeline">
+                        <div className="grid gap-4 sm:gap-5 lg:grid-cols-2">
                             {[{
                                 role: "Grade 11 Representative",
                                 org: "Club of Programmers",
@@ -147,7 +170,7 @@ const About = () => {
                                     "Showcasing maturity and technical skills in a team setting"
                                 ]
                             }].map((exp) => (
-                                <div key={exp.role} className="p-4 sm:p-5 card-elevate timeline-item" style={cardStyle}>
+                                <div key={exp.role} className="p-4 sm:p-5 card-elevate" style={cardStyle}>
                                     <h4 className="text-lg sm:text-xl font-medium" style={{ color: "var(--text)" }}>{exp.role}</h4>
                                     <div className="mt-1 text-sm" style={{ color: "var(--muted)" }}>{exp.org} · {exp.period}</div>
                                     <ul className="mt-2 list-disc pl-5 space-y-1">

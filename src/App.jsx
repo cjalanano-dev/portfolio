@@ -34,6 +34,10 @@ function AppShell() {
 
       if (pathOrSearchChanged) {
         setLoading(true);
+        // Always scroll to top on real navigations
+        if (typeof window !== 'undefined') {
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
         const t = setTimeout(() => setLoading(false), 400);
         return () => clearTimeout(t);
       } else {
@@ -50,7 +54,8 @@ function AppShell() {
   }, [location]);
 
   return (
-    <div className="flex flex-col min-h-screen">
+    <div className="flex flex-col min-h-screen relative">
+      <div className="background-canvas" aria-hidden="true"></div>
       <Loader visible={loading} />
       <NavBar />
       <main className="flex-grow">
