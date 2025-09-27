@@ -157,9 +157,9 @@ const Home = () => {
           </div>
           <div className="grid gap-4 sm:gap-5 md:grid-cols-2 lg:grid-cols-3">
             {[
-              { title: "Lorem Ipsum", desc: "Lorem ipsum dolor sit amet.", tags: ["React", "JavaScript"] },
-              { title: "Lorem Ipsum", desc: "Lorem ipsum dolor sit amet.", tags: ["Python", "MySQL"] },
-              { title: "Lorem Ipsum", desc: "Lorem ipsum dolor sit amet.", tags: ["Web3", "Solidity"] },
+              { title: "Blockchain Voting Simulator", desc: "An experimental web app simulating how a blockchain-based voting system could work.", tags: ["Blockchain", "JavaScript"] },
+              { title: "F1 Lap Time Calculator", desc: "A simple F1 lap time calculator with factors like weather, fuel load, and tire compound.", tags: ["Python", "F1"] },
+              { title: "Lorem Ipsum", desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.", tags: ["Coming", "Soon"] },
             ].map((p) => (
               <Link key={p.title} to="/projects" className="block card-elevate" style={cardStyle}>
                 <div className="p-4 sm:p-5">

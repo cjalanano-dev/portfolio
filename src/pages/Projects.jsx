@@ -50,7 +50,7 @@ const Projects = () => {
                             className="group relative rounded-xl overflow-hidden card-elevate border"
                             style={{ background: "var(--surface)", borderColor: "var(--border)" }}
                         >
-                            {/* Media: real image if provided, else elegant placeholder */}
+                            {/* Image area with hover overlay */}
                             <div className="relative w-full" style={{ aspectRatio: "16 / 10" }}>
                                 {p.image ? (
                                     <img
