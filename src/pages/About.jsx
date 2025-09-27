@@ -15,8 +15,6 @@ const About = () => {
     // Determine active tab based on URL hash for visual feedback (no default to Intro)
     const active = useMemo(() => (hash || ""), [hash]);
 
-    // Removed auto-scroll to #intro so landing on /about shows the top heading
-
     useEffect(() => {
         // Show the back-to-top button only when near the bottom of the page
         const onScroll = () => {
@@ -56,7 +54,7 @@ const About = () => {
                                 <div>
                                     <h3 className="text-2xl sm:text-3xl font-semibold tracking-tight accent-underline" style={{ color: "var(--text)" }}>Introduction</h3>
                                     <p className="mt-3 sm:mt-4 text-base sm:text-lg" style={{ color: "var(--muted)" }}>
-                                        I’m an aspiring Software Engineer and future IT/CS Professor, driven to share knowledge and build impactful systems. I enjoy designing robust APIs, evolving architecture for scale, and mentoring others through clean code practices and thoughtful documentation.
+                                        I’m Carlos James Alanano, a Computer Science student and backend developer passionate about building reliable, scalable systems. I specialize in backend and API development while exploring emerging technologies like blockchain and AI. Beyond coding, I’m driven by a passion for teaching, mentorship, and sharing knowledge with others. My long-term goal is to become a CS/IT professor, bridging the gap between theory and practical application.
                                     </p>
                                     <div className="mt-5 flex flex-wrap justify-start gap-3">
                                         <Link to="/projects" className="px-4 py-2 rounded-md inline-flex items-center gap-2" style={{ background: "var(--accent)", color: "#001015" }}>
@@ -207,24 +205,7 @@ const About = () => {
                 </section>
             </div>
         </section>
-        {showBackToTop && (
-            <button
-                type="button"
-                aria-label="Back to top"
-                title="Back to top"
-                onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-                className="fixed left-4 bottom-4 z-50 inline-flex items-center gap-2 px-3 py-2 rounded-md border card-elevate animate-slide-fade-in"
-                style={{
-                    background: 'var(--surface)',
-                    borderColor: 'var(--border)',
-                    color: 'var(--text)',
-                    boxShadow: '0 6px 18px rgba(34,211,238,0.06)'
-                }}
-            >
-                <FaArrowUp />
-                <span className="hidden sm:inline">Back to top</span>
-            </button>
-        )}
+        {/* Back to top button removed */}
         </>
     );
 };

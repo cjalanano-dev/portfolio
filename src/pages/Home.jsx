@@ -15,16 +15,13 @@ const Home = () => {
         {/* Hero */}
         <div className="flex flex-col items-center text-center gap-5 sm:gap-6">
           <span className="text-xs sm:text-sm" style={{ color: "var(--muted)" }}>
-            CS Student · Developer · Innovator
+            CS Student · Backend Developer · AI Enthusiast
           </span>
           <h2 className="text-3xl sm:text-5xl md:text-6xl font-extrabold tracking-tight tracking-tight-lg tracking-tighter-xl leading-tight" style={{ color: "var(--text)" }}>
-            Building & Learning,
-          </h2>
-          <h2 className="text-3xl sm:text-5xl md:text-6xl font-extrabold tracking-tight tracking-tight-lg tracking-tighter-xl leading-tight" style={{ color: "var(--text)" }}>
-            One Project at a Time
+            Building & Learning, <br /> One Project at a Time
           </h2>
           <p className="max-w-2xl text-base sm:text-lg" style={{ color: "var(--muted)" }}>
-            Hi, I’m <span style={{ color: "var(--accent)" }}>Carlos James Alanano</span>. I develop web applications, dive into Blockchain and AI, and enjoy creating solutions that help others understand technology better.
+            Hi, I’m <span style={{ color: "var(--accent)" }}>Carlos James Alanano</span>. I develop web applications, dive into Blockchain <br />and AI, and enjoy creating solutions that help others understand technology better.
           </p>
           <div className="flex flex-wrap items-center justify-center gap-3 sm:gap-4 pt-1 sm:pt-2">
             <Link
@@ -100,7 +97,7 @@ const Home = () => {
             <div className="p-5 sm:p-6 md:p-8">
               <h3 className="text-2xl sm:text-3xl font-semibold tracking-tight accent-underline" style={{ color: "var(--text)" }}>About Me</h3>
               <p className="mt-3 sm:mt-4 text-base sm:text-lg" style={{ color: "var(--muted)" }}>
-                I’m a CS student and developer focused on backend engineering, clean APIs, and teaching tech concepts. I love turning ideas into dependable systems and helping others learn along the way.
+                I’m a Computer Science student and Backend Developer passionate about building reliable systems, exploring blockchain and AI, and sharing knowledge in tech. I aim to craft solutions that are not only functional but also help others learn and grow.
               </p>
               <div className="mt-5">
                 <Link to="/about#intro" className="inline-flex items-center gap-2 px-4 py-2 rounded-md border card-elevate" style={{ borderColor: "var(--accent)", color: "var(--accent)" }}>
