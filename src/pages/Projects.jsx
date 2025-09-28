@@ -16,6 +16,7 @@ const Projects = () => {
             type: "console",
             brief: "A simple F1 lap time calculator with factors like weather, fuel load, and tire compound.",
             repo: "https://github.com/cjalanano-dev/F1-laptime-calculator",
+            image: new URL("../assets/projects/laptime.png", import.meta.url).href,
         },
         {
             title: "Lorem Ipsum",
@@ -37,7 +38,7 @@ const Projects = () => {
                         My Projects
                     </h2>
                     <p className="mt-2.5 sm:mt-3 text-base sm:text-lg" style={{ color: "var(--muted)" }}>
-                        A curated selection of work. Hover to preview details.
+                        A curated selection of work. <span></span>Hover to preview details.
                     </p>
                 </div>
 
@@ -56,7 +57,7 @@ const Projects = () => {
                                     <img
                                         src={p.image}
                                         alt={`${p.title} preview`}
-                                        className="absolute inset-0 w-full h-full object-cover"
+                                        className="absolute inset-0 w-full h-full object-contain"
                                         style={{ borderBottom: "1px solid var(--border)" }}
                                         loading="lazy"
                                     />
