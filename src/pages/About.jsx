@@ -45,24 +45,64 @@ const About = () => {
                     </p>
                 </div>
 
-                {/* 1. Intro about me */}
+                {/* 1. Intro about me with photo */}
                 <section id="intro" style={{ scrollMarginTop: "6rem" }} className="mt-10 sm:mt-12">
-                    <div className="mx-auto max-w-4xl card-elevate" style={cardStyle}>
-                        <div className="p-5 sm:p-6 md:p-8">
-                            <div className="flex items-start gap-3">
-                                <div className="mt-1 text-xl" style={{ color: "var(--accent)" }}><FaWandMagicSparkles /></div>
-                                <div>
-                                    <h3 className="text-2xl sm:text-3xl font-semibold tracking-tight accent-underline" style={{ color: "var(--text)" }}>Introduction</h3>
-                                    <p className="mt-3 sm:mt-4 text-base sm:text-lg" style={{ color: "var(--muted)" }}>
-                                        I’m Carlos James Alanano, a Computer Science student and backend developer passionate about building reliable, scalable systems. I specialize in backend and API development while exploring emerging technologies like blockchain and AI. Beyond coding, I’m driven by a passion for teaching, mentorship, and sharing knowledge with others. My long-term goal is to become a CS/IT professor, bridging the gap between theory and practical application.
-                                    </p>
-                                    <div className="mt-5 flex flex-wrap justify-start gap-3">
-                                        <Link to="/projects" className="px-4 py-2 rounded-md inline-flex items-center gap-2" style={{ background: "var(--accent)", color: "#001015" }}>
-                                            Explore Projects <FaArrowRight />
-                                        </Link>
-                                        <Link to="/contact" className="px-4 py-2 rounded-md border" style={{ borderColor: "var(--border)", color: "var(--text)" }}>
-                                            Get In Touch
-                                        </Link>
+                    <div className="mx-auto max-w-5xl">
+                        <div className="grid gap-5 sm:gap-6 md:grid-cols-5">
+                            {/* Photo (top on mobile, right on desktop) */}
+                            <div className="order-last md:order-last md:col-span-2">
+                                <div className="relative rounded-xl overflow-hidden card-elevate border h-full" style={{ background: 'var(--surface)', borderColor: 'var(--border)' }}>
+                                    <div aria-hidden="true" className="absolute inset-0" style={{
+                                        background:
+                                            'radial-gradient(800px 200px at 0% 0%, rgba(34,211,238,0.08), transparent 45%), radial-gradient(800px 200px at 100% 100%, rgba(34,211,238,0.06), transparent 50%), linear-gradient(180deg, rgba(2,6,23,0.35), rgba(2,6,23,0.55))',
+                                        filter: 'drop-shadow(0 0 18px rgba(34,211,238,0.25))'
+                                    }} />
+                                    <div className="relative intro-photo w-full" style={{ minHeight: 280 }}>
+                                        <img
+                                            src={new URL('../assets/img/Face.jpg', import.meta.url).href}
+                                            alt="Portrait of Carlos James Alanano"
+                                            className="absolute inset-0 w-full h-full object-cover"
+                                            sizes="(min-width: 768px) 40vw, 80vw"
+                                            style={{ zIndex: 1 }}
+                                            decoding="async"
+                                            onError={(e) => {
+                                                const fallback = e.currentTarget.nextElementSibling;
+                                                e.currentTarget.style.display = 'none';
+                                                if (fallback) fallback.style.display = 'flex';
+                                            }}
+                                            loading="lazy"
+                                        />
+                                        {/* Fallback placeholder if image missing */}
+                                        <div className="absolute inset-0 flex items-center justify-center" style={{ display: 'none', zIndex: 1 }}>
+                                            <div className="rounded-lg p-4" style={{ background: 'rgba(15,23,42,0.55)', border: '1px solid var(--border)', color: 'var(--muted)' }}>
+                                                <span className="text-sm">Photo coming soon</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            {/* Intro card */}
+                            <div className="md:col-span-3">
+                                <div className="card-elevate border rounded-xl h-full flex flex-col" style={{ background: 'var(--surface)', borderColor: 'var(--border)' }}>
+                                    <div className="p-5 sm:p-6 md:p-8">
+                                        <div className="flex items-start gap-3">
+                                            <div className="mt-1 text-xl" style={{ color: 'var(--accent)' }}><FaWandMagicSparkles /></div>
+                                            <div>
+                                                <h3 className="text-2xl sm:text-3xl font-semibold tracking-tight accent-underline" style={{ color: 'var(--text)' }}>Introduction</h3>
+                                                <p className="mt-3 sm:mt-4 text-base sm:text-lg" style={{ color: 'var(--muted)' }}>
+                                                    I’m Carlos James Alanano, a Computer Science student and backend developer passionate about building reliable, scalable systems. I specialize in backend and API development while exploring emerging technologies like blockchain and AI. Beyond coding, I’m driven by a passion for teaching, mentorship, and sharing knowledge with others. My long-term goal is to become a CS/IT professor, bridging the gap between theory and practical application.
+                                                </p>
+                                                <div className="mt-5 flex flex-wrap justify-start gap-3">
+                                                    <Link to="/projects" className="px-4 py-2 rounded-md inline-flex items-center gap-2" style={{ background: 'var(--accent)', color: '#001015' }}>
+                                                        Explore Projects <FaArrowRight />
+                                                    </Link>
+                                                    <Link to="/contact" className="px-4 py-2 rounded-md border" style={{ borderColor: 'var(--border)', color: 'var(--text)' }}>
+                                                        Get In Touch
+                                                    </Link>
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
