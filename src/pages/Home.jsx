@@ -55,24 +55,6 @@ const Home = () => {
             >
               View Projects
             </Link>
-            <a
-              href="/cv/Carlos-James-Alanano-CV.pdf"
-              download
-              className="px-4 py-2 sm:px-5 sm:py-2.5 rounded-md border"
-              style={{
-                borderColor: "var(--accent)",
-                color: "var(--accent)",
-                background: "transparent",
-              }}
-              onMouseEnter={(e) => {
-                e.currentTarget.style.background = "rgba(34,211,238,0.08)";
-              }}
-              onMouseLeave={(e) => {
-                e.currentTarget.style.background = "transparent";
-              }}
-            >
-              Download CV
-            </a>
           </div>
           <div className="mt-8 sm:mt-10 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-2.5 sm:gap-3">
             {["HTML", "CSS", "JavaScript", "Python", "Java", "Kotlin"].map((s) => (
