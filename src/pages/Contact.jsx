@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { FaGithub, FaLinkedin, FaEnvelope, FaLocationDot, FaFileArrowDown, FaInstagram, FaFacebook } from "react-icons/fa6";
 
 const mono = {
@@ -13,15 +13,62 @@ const Contact = () => {
     const facebook = "https://facebook.com/mrztdsh.dev"; 
     const resumeHref = "/";
 
-    const onSubmit = (e) => {
+    // Formspree configuration
+    const formspreeId = import.meta.env.VITE_FORMSPREE_ID;
+    const endpoint = formspreeId ? `https://formspree.io/f/${formspreeId}` : null;
+
+    // UI status
+    const [status, setStatus] = useState("idle"); // idle/sending/success/error
+    const [errorMsg, setErrorMsg] = useState("");
+
+    const onSubmit = async (e) => {
         e.preventDefault();
-        const fd = new FormData(e.currentTarget);
+        const form = e.currentTarget; 
+        const fd = new FormData(form);
+
+        if ((fd.get('company') || '').toString().trim() !== '') {
+            return;
+        }
+
         const name = (fd.get('name') || '').toString();
         const from = (fd.get('email') || '').toString();
         const message = (fd.get('message') || '').toString();
-        const subject = encodeURIComponent(`Portfolio inquiry from ${name || 'someone'}`);
-        const body = encodeURIComponent(`${message}\n\n—\nFrom: ${name || 'Anonymous'} <${from || 'no-email-provided'}>`);
-        window.location.href = `mailto:${email}?subject=${subject}&body=${body}`;
+
+        if (!endpoint) {
+            setStatus('error');
+            setErrorMsg('Form not configured. Please set VITE_FORMSPREE_ID in your .env file.');
+            return;
+        }
+
+        setStatus('sending');
+        setErrorMsg('');
+        try {
+            const res = await fetch(endpoint, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'Accept': 'application/json',
+            },
+            body: JSON.stringify({
+                name,
+                email: from,
+                message,
+                subject: `Portfolio inquiry from ${name || 'someone'}`,
+                reply_to: from,
+            }),
+            });
+
+            if (!res.ok) {
+            const data = await res.json().catch(() => ({}));
+            throw new Error(data?.error || `Failed to send message (${res.status})`);
+            }
+
+            setStatus('success');
+            form.reset();
+        } catch (err) {
+            setStatus('error');
+            setErrorMsg(err?.message || 'Something went wrong. Please try again.');
+        }
     };
 
     return (
@@ -138,6 +185,8 @@ const Contact = () => {
                                 $ sendMessage
                             </div>
                             <div className="space-y-3 sm:space-y-3.5">
+                                {/*antispam*/}
+                                <input type="text" name="company" autoComplete="off" tabIndex={-1} className="hidden" aria-hidden="true" />
                                 <div>
                                     <label htmlFor="name" className="block text-sm mb-1" style={{ color: 'var(--muted)' }}>name:</label>
                                     <input
@@ -154,6 +203,7 @@ const Contact = () => {
                                 <div>
                                     <label htmlFor="email" className="block text-sm mb-1" style={{ color: 'var(--muted)' }}>email:</label>
                                     <input
+                                        required
                                         id="email"
                                         name="email"
                                         type="email"
@@ -167,6 +217,7 @@ const Contact = () => {
                                 <div>
                                     <label htmlFor="message" className="block text-sm mb-1" style={{ color: 'var(--muted)' }}>message:</label>
                                     <textarea
+                                        required
                                         id="message"
                                         name="message"
                                         rows={4}
@@ -179,11 +230,19 @@ const Contact = () => {
                             </div>
                             <button
                                 type="submit"
-                                className="mt-4 w-full px-4 py-2 rounded-md font-medium"
+                                className="mt-4 w-full px-4 py-2 rounded-md font-medium disabled:opacity-60"
                                 style={{ background: 'var(--accent)', color: '#001015' }}
+                                disabled={status === 'sending'}
                             >
-                                sendMessage()
+                                {status === 'sending' ? 'sending…' : status === 'success' ? 'sent ✓' : 'sendMessage()'}
                             </button>
+
+                            {status === 'error' && (
+                                <div className="mt-3 text-sm" style={{ color: 'salmon' }}>{errorMsg}</div>
+                            )}
+                            {status === 'success' && (
+                                <div className="mt-3 text-sm" style={{ color: 'var(--muted)' }}>Thanks! Your message was sent.</div>
+                            )}
                         </form>
                     </div>
                 </div>
