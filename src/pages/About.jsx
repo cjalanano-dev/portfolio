@@ -113,8 +113,8 @@ const About = () => {
                 {/* 2. Personal Education Information */}
                 <section id="education" style={{ scrollMarginTop: "6rem" }} className="mt-10 sm:mt-12">
                     <div className="mx-auto max-w-5xl">
-                        <div className="flex items-center gap-2 mb-4">
-                            <h3 className="text-2xl sm:text-3xl font-semibold tracking-tight" style={{ color: "var(--text)" }}>Education</h3>
+                       <div className="flex items-center gap-2 mb-4">
+                            <h3 className="text-2xl sm:text-3xl font-semibold tracking-tight accent-underline" style={{ color: "var(--text)" }}>Education</h3>
                         </div>
                         <div className="grid gap-4 sm:gap-5 md:grid-cols-2">
                             {[{
