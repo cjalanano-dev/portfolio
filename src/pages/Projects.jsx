@@ -27,14 +27,6 @@ const Projects = () => {
             image: new URL("../assets/projects/inside.png", import.meta.url).href,
         },
         {
-            title: "Raioh Design Web Design",
-            type: "web",
-            brief: "My first responsive website made on Frontline Business Solutions, Inc. during my internship.",
-            live: "https://raioh-designs.vercel.app",
-            repo: "https://github.com/cjalanano-dev/Raioh-Designs",
-            image: new URL("../assets/projects/raioh.png", import.meta.url).href,
-        },
-        {
             title: "Chauffeur App",
             type: "mobile",
             brief: "An android app for booking chauffeur services and deliveries, with google maps integration.",
