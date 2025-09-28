@@ -125,7 +125,7 @@ const Contact = () => {
                                 onMouseLeave={(e) => (e.currentTarget.style.borderColor = 'var(--border)')}
                                 download
                             >
-                                <FaFileArrowDown /> <span>Download Resume</span>
+                                <FaFileArrowDown /> <span>Download CV</span>
                             </a>
                         </div>
 

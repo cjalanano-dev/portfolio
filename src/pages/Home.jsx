@@ -79,7 +79,7 @@ const Home = () => {
             <div className="p-5 sm:p-6 md:p-8">
               <h3 className="text-2xl sm:text-3xl font-semibold tracking-tight accent-underline" style={{ color: "var(--text)" }}>About Me</h3>
               <p className="mt-3 sm:mt-4 text-base sm:text-lg" style={{ color: "var(--muted)" }}>
-                I’m a Computer Science student and backend developer passionate about building reliable systems, clean APIs, and mobile applications. I enjoy turning ideas into scalable solutions while constantly exploring ways to grow as a software engineer.
+                I’m a Computer Science student and backend developer passionate about building reliable systems and  mobile applications. I enjoy turning ideas into real-world solutions while constantly exploring ways to grow as a software engineer.
               </p>
               <div className="mt-5">
                 <Link to="/about#intro" className="inline-flex items-center gap-2 px-4 py-2 rounded-md border card-elevate" style={{ borderColor: "var(--accent)", color: "var(--accent)" }}>
@@ -113,7 +113,7 @@ const Home = () => {
                 <h3 className="text-xl sm:text-2xl font-semibold accent-underline" style={{ color: "var(--text)" }}>Services</h3>
                 <div className="mt-4 grid gap-3">
                   {[
-                    { title: "API & Backend Development", desc: "Designing RESTful APIs & authentication" },
+                    { title: "Backend Development", desc: "Designing RESTful APIs & authentication" },
                     { title: "Mobile App Development", desc: "Building mobile applications with a focus on user experience and performance" },
                     { title: "Database Design & Management", desc: "Designing efficient database schemas and managing SQL databases for optimal performance" },
                   ].map((s) => (
@@ -141,7 +141,7 @@ const Home = () => {
             {[
               { title: "Blockchain Voting Simulator", desc: "An experimental web app simulating how a blockchain-based voting system could work.", tags: ["Blockchain", "JavaScript"] },
               { title: "F1 Lap Time Calculator", desc: "A simple F1 lap time calculator with factors like weather, fuel load, and tire compound.", tags: ["Python", "F1"] },
-              { title: "Lorem Ipsum", desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.", tags: ["Coming", "Soon"] },
+              { title: "Inside Style Web Design", desc: "A modern, responsive website made on Frontline Business Solutions, Inc. during my internship.", tags: ["HTML", "CSS"] },
             ].map((p) => (
               <Link key={p.title} to="/projects" className="block card-elevate" style={cardStyle}>
                 <div className="p-4 sm:p-5">

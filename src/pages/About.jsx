@@ -91,7 +91,7 @@ const About = () => {
                                             <div>
                                                 <h3 className="text-2xl sm:text-3xl font-semibold tracking-tight accent-underline" style={{ color: 'var(--text)' }}>Introduction</h3>
                                                 <p className="mt-3 text-justify sm:mt-4 text-base sm:text-lg" style={{ color: 'var(--muted)' }}>
-                                                    I’m Carlos James Alanano, a Computer Science student and backend developer focused on building scalable systems and mobile applications. My work includes clean API design, backend architecture, and developing Android apps with Java and Kotlin. I’m passionate about creating dependable, user-friendly solutions and learning modern practices in software engineering. My goal is to grow as a software engineer while continuously building impactful projects.
+                                                    I’m Carlos James Alanano, a Computer Science student and backend developer focused on building scalable systems and mobile applications. My work includes developing the backend and Android apps with Java or Kotlin. I’m passionate about creating efficient, user-friendly solutions and learning modern practices in software engineering. My goal is to grow as a software engineer while continuously building impactful projects.
                                                 </p>
                                                 <div className="mt-5 flex flex-wrap justify-start gap-3">
                                                     <Link to="/projects" className="px-4 py-2 rounded-md inline-flex items-center gap-2" style={{ background: 'var(--accent)', color: '#001015' }}>
@@ -195,7 +195,7 @@ const About = () => {
                                 period: "March - April, 2025",
                                 points: [
                                     "Designed Website Mockups using Figma",
-                                    "Developed Responsive Web Design",
+                                    "Developed Responsive Web Design",  
                                     "Converted Mockups to HTML/CSS",
                                 ]
                             },{
@@ -228,7 +228,7 @@ const About = () => {
                         <h3 className="text-2xl sm:text-3xl font-semibold tracking-tight mb-4 accent-underline" style={{ color: "var(--text)" }}>Services Offered</h3>
                         <div className="grid gap-4 sm:gap-5 md:grid-cols-2 lg:grid-cols-3">
                             {[
-                                { title: "API & Backend Development", desc: "Designing RESTful APIs, authentication, and scalable services with Node.js/Laravel." },
+                                { title: "Backend Development", desc: "Designing RESTful APIs, authentication, and scalable services with Node.js/Laravel." },
                                 { title: "Mobile App Development", desc: "Building mobile applications with a focus on user experience and performance using Java/Kotlin." },
                                 { title: "Database Design & Management", desc: "Designing efficient database schemas and managing SQL databases for optimal performance." },
                             ].map((s) => (
