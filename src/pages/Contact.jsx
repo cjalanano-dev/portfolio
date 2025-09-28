@@ -1,5 +1,5 @@
 import React from "react";
-import { FaGithub, FaLinkedin, FaEnvelope, FaLocationDot, FaFileArrowDown } from "react-icons/fa6";
+import { FaGithub, FaLinkedin, FaEnvelope, FaLocationDot, FaFileArrowDown, FaInstagram, FaFacebook } from "react-icons/fa6";
 
 const mono = {
     fontFamily: 'ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace'
@@ -9,7 +9,9 @@ const Contact = () => {
     const email = "cjalanano.dev@gmail.com";
     const github = "https://github.com/cjalanano-dev";
     const linkedin = "https://linkedin.com/in/cjalanano-dev";
-    const resumeHref = "/resume.pdf"; // Replace with your actual resume path in /public
+    const instagram = "https://instagram.com/mrztdsh";
+    const facebook = "https://facebook.com/mrztdsh.dev"; 
+    const resumeHref = "/";
 
     const onSubmit = (e) => {
         e.preventDefault();
@@ -106,13 +108,26 @@ const Contact = () => {
                                     <FaLinkedin /> <span style={{ ...mono }}>LinkedIn</span>
                                 </a>
                                 <a
-                                    href={`mailto:${email}`}
+                                    href={instagram}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
                                     className="inline-flex items-center gap-2 rounded-md border px-3 py-2"
                                     style={{ background: 'rgba(15,23,42,0.55)', borderColor: 'var(--border)', color: 'var(--text)' }}
                                     onMouseEnter={(e) => (e.currentTarget.style.borderColor = 'var(--accent)')}
                                     onMouseLeave={(e) => (e.currentTarget.style.borderColor = 'var(--border)')}
                                 >
-                                    <FaEnvelope /> <span style={{ ...mono }}>Email</span>
+                                    <FaInstagram /> <span style={{ ...mono }}>Instagram</span>
+                                </a>
+                                <a
+                                    href={facebook}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="inline-flex items-center gap-2 rounded-md border px-3 py-2"
+                                    style={{ background: 'rgba(15,23,42,0.55)', borderColor: 'var(--border)', color: 'var(--text)' }}
+                                    onMouseEnter={(e) => (e.currentTarget.style.borderColor = 'var(--accent)')}
+                                    onMouseLeave={(e) => (e.currentTarget.style.borderColor = 'var(--border)')}
+                                >
+                                    <FaFacebook /> <span style={{ ...mono }}>Facebook</span>
                                 </a>
                             </div>
                         </div>
