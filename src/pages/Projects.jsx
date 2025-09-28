@@ -19,6 +19,28 @@ const Projects = () => {
             image: new URL("../assets/projects/laptime.png", import.meta.url).href,
         },
         {
+            title: "Inside Style Web Design",
+            type: "web",
+            brief: "A modern, responsive website made on Frontline Business Solutions, Inc. during my internship.",
+            live: "https://inside-style.vercel.app",
+            repo: "https://github.com/cjalanano-dev/Inside-Style",
+            image: new URL("../assets/projects/inside.png", import.meta.url).href,
+        },
+        {
+            title: "Raioh Design Web Design",
+            type: "web",
+            brief: "My first modern, responsive website made on Frontline Business Solutions, Inc. during my internship.",
+            live: "https://raioh-designs.vercel.app",
+            repo: "https://github.com/cjalanano-dev/Raioh-Designs",
+            image: new URL("../assets/projects/raioh.png", import.meta.url).href,
+        },
+        {
+            title: "Chauffeur App",
+            type: "mobile",
+            brief: "An android app for booking chauffeur services and deliveries, with google maps integration.",
+            repo: "https://github.com/cjalanano-dev/Chauffeur-Project",
+        },
+        {
             title: "Lorem Ipsum",
             type: "console",
             brief: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
@@ -120,7 +142,7 @@ const Projects = () => {
                                                 </a>
                                             )}
 
-                                            {(p.type === "desktop" || p.type === "console") && p.repo && (
+                                            {(p.type === "desktop" || p.type === "console" || p.type === "mobile") && p.repo && (
                                                 <a
                                                     href={p.repo}
                                                     target={p.repo.startsWith("http") ? "_blank" : undefined}
@@ -151,7 +173,7 @@ const Projects = () => {
                                             {p.title}
                                         </h3>
                                         <p className="mt-1 text-sm" style={{ color: "var(--muted)" }}>
-                                            {p.type === "web" ? "Website" : p.type === "desktop" ? "Desktop App" : "Console App"}
+                                            {p.type === "web" ? "Website" : p.type === "desktop" ? "Desktop App" : p.type === "console" ? "Console App" : "Mobile App"}
                                         </p>
                                     </div>
                                 </div>
