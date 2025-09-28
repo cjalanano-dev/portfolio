@@ -15,13 +15,13 @@ const Home = () => {
         {/* Hero */}
         <div className="flex flex-col items-center text-center gap-5 sm:gap-6">
           <span className="text-xs sm:text-sm" style={{ color: "var(--muted)" }}>
-            CS Student · Backend Developer · AI Enthusiast
+            CS Student · Developer · AI Enthusiast
           </span>
           <h2 className="text-3xl sm:text-5xl md:text-6xl font-extrabold tracking-tight tracking-tight-lg tracking-tighter-xl leading-tight" style={{ color: "var(--text)" }}>
             Building & Learning, <br /> One Project at a Time
           </h2>
           <p className="max-w-2xl text-base sm:text-lg" style={{ color: "var(--muted)" }}>
-            Hi, I’m <span style={{ color: "var(--accent)" }}>Carlos James Alanano</span>. I develop web applications, dive into Blockchain <br />and AI, and enjoy creating solutions that help others understand technology better.
+            Hi, I’m <span style={{ color: "var(--accent)" }}>Carlos James Alanano</span>. I design and develop scalable backend systems and mobile apps. I’m passionate about creating dependable solutions and continuously improving my skills in modern software engineering.
           </p>
           <div className="flex flex-wrap items-center justify-center gap-3 sm:gap-4 pt-1 sm:pt-2">
             <Link
@@ -75,7 +75,7 @@ const Home = () => {
             </a>
           </div>
           <div className="mt-8 sm:mt-10 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-2.5 sm:gap-3">
-            {["HTML", "CSS", "JavaScript", "Python", "Java", "C#"].map((s) => (
+            {["HTML", "CSS", "JavaScript", "Python", "Java", "Kotlin"].map((s) => (
               <span
                 key={s}
                 className="px-2.5 sm:px-3 py-1 rounded-full text-xs sm:text-sm"
@@ -97,7 +97,7 @@ const Home = () => {
             <div className="p-5 sm:p-6 md:p-8">
               <h3 className="text-2xl sm:text-3xl font-semibold tracking-tight accent-underline" style={{ color: "var(--text)" }}>About Me</h3>
               <p className="mt-3 sm:mt-4 text-base sm:text-lg" style={{ color: "var(--muted)" }}>
-                I’m a Computer Science student and Backend Developer passionate about building reliable systems, exploring blockchain and AI, and sharing knowledge in tech. I aim to craft solutions that are not only functional but also help others learn and grow.
+                I’m a Computer Science student and backend developer passionate about building reliable systems, clean APIs, and mobile applications. I enjoy turning ideas into scalable solutions while constantly exploring ways to grow as a software engineer.
               </p>
               <div className="mt-5">
                 <Link to="/about#intro" className="inline-flex items-center gap-2 px-4 py-2 rounded-md border card-elevate" style={{ borderColor: "var(--accent)", color: "var(--accent)" }}>
@@ -116,7 +116,7 @@ const Home = () => {
               <div className="p-5 sm:p-6 md:p-7">
                 <h3 className="text-xl sm:text-2xl font-semibold accent-underline" style={{ color: "var(--text)" }}>Skills</h3>
                 <div className="mt-4 grid gap-3">
-                  {["Backend Development", "Blockchain Basics", "Python", "JavaScript / React"].map((s) => (
+                  {["Backend Development", "Mobile App Development", "Database Management", "Web Development"].map((s) => (
                     <div key={s} className="flex items-center gap-3 p-3 rounded-md border" style={{ borderColor: "var(--border)" }}>
                       <span style={{ width: 8, height: 8, borderRadius: 9999, background: "var(--accent)" }} />
                       <div className="font-medium" style={{ color: "var(--text)" }}>{s}</div>
@@ -132,8 +132,8 @@ const Home = () => {
                 <div className="mt-4 grid gap-3">
                   {[
                     { title: "API & Backend Development", desc: "Designing RESTful APIs & authentication" },
-                    { title: "Blockchain Development", desc: "Building prototypes that showcase blockchain concepts" },
-                    { title: "CS/IT Mentorship", desc: "Guiding students in their tech journeys" },
+                    { title: "Mobile App Development", desc: "Building mobile applications with a focus on user experience and performance" },
+                    { title: "Database Design & Management", desc: "Designing efficient database schemas and managing SQL databases for optimal performance" },
                   ].map((s) => (
                     <div key={s.title} className="flex items-start gap-3 p-3 rounded-md border" style={{ borderColor: "var(--border)" }}>
                       <div style={{ color: "var(--accent)" }}>{s.icon}</div>

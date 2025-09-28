@@ -90,8 +90,8 @@ const About = () => {
                                             <div className="mt-1 text-xl" style={{ color: 'var(--accent)' }}><FaWandMagicSparkles /></div>
                                             <div>
                                                 <h3 className="text-2xl sm:text-3xl font-semibold tracking-tight accent-underline" style={{ color: 'var(--text)' }}>Introduction</h3>
-                                                <p className="mt-3 sm:mt-4 text-base sm:text-lg" style={{ color: 'var(--muted)' }}>
-                                                    I’m Carlos James Alanano, a Computer Science student and backend developer passionate about building reliable, scalable systems. I specialize in backend and API development while exploring emerging technologies like blockchain and AI. Beyond coding, I’m driven by a passion for teaching, mentorship, and sharing knowledge with others. My long-term goal is to become a CS/IT professor, bridging the gap between theory and practical application.
+                                                <p className="mt-3 text-justify sm:mt-4 text-base sm:text-lg" style={{ color: 'var(--muted)' }}>
+                                                    I’m Carlos James Alanano, a Computer Science student and backend developer focused on building scalable systems and mobile applications. My work includes clean API design, backend architecture, and developing Android apps with Java and Kotlin. I’m passionate about creating dependable, user-friendly solutions and learning modern practices in software engineering. My goal is to grow as a software engineer while continuously building impactful projects.
                                                 </p>
                                                 <div className="mt-5 flex flex-wrap justify-start gap-3">
                                                     <Link to="/projects" className="px-4 py-2 rounded-md inline-flex items-center gap-2" style={{ background: 'var(--accent)', color: '#001015' }}>
@@ -147,13 +147,13 @@ const About = () => {
                         <div className="grid gap-4 sm:gap-5 md:grid-cols-2">
                             {[
                                 "Backend Development",
-                                "CRUD Systems",
+                                "Mobile App Development",
                                 "Python",
                                 "JavaScript / React",
-                                "SQL / MySQL",
-                                "Git / GitHub",
-                                "HTML / CSS",
-                                "Blockchain Basics",
+                                "Database Management",
+                                "Version Control (Git)",
+                                "Web Development",
+                                "Java / Kotlin",
                             ].map((s) => (
                                 <div key={s} className="p-4 sm:p-5 card-elevate flex items-center gap-3" style={cardStyle}>
                                     <span style={{ width: 8, height: 8, borderRadius: 9999, background: "var(--accent)" }} />
@@ -229,8 +229,8 @@ const About = () => {
                         <div className="grid gap-4 sm:gap-5 md:grid-cols-2 lg:grid-cols-3">
                             {[
                                 { title: "API & Backend Development", desc: "Designing RESTful APIs, authentication, and scalable services with Node.js/Laravel." },
-                                { title: "Blockchain Development", desc: "Building prototypes that showcase blockchain concepts like voting systems, bridging backend engineering with Web3." },
-                                { title: "CS/IT Mentorship", desc: "Teaching programming fundamentals, backend development, and modern tech concepts—helping students and peers grow their skills."},
+                                { title: "Mobile App Development", desc: "Building mobile applications with a focus on user experience and performance using Java/Kotlin." },
+                                { title: "Database Design & Management", desc: "Designing efficient database schemas and managing SQL databases for optimal performance." },
                             ].map((s) => (
                                 <div key={s.title} className="p-4 sm:p-5 flex items-start gap-3 card-elevate" style={cardStyle}>
                                     <div style={{ color: "var(--accent)", fontSize: 20 }}>{s.icon}</div>
