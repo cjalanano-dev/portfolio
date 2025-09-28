@@ -65,6 +65,9 @@ const Contact = () => {
 
             setStatus('success');
             form.reset();
+            setTimeout(() => {
+                window.location.href = "/";;
+            }, 2000);
         } catch (err) {
             setStatus('error');
             setErrorMsg(err?.message || 'Something went wrong. Please try again.');
