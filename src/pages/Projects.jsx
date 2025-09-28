@@ -29,7 +29,7 @@ const Projects = () => {
         {
             title: "Raioh Design Web Design",
             type: "web",
-            brief: "My first modern, responsive website made on Frontline Business Solutions, Inc. during my internship.",
+            brief: "My first responsive website made on Frontline Business Solutions, Inc. during my internship.",
             live: "https://raioh-designs.vercel.app",
             repo: "https://github.com/cjalanano-dev/Raioh-Designs",
             image: new URL("../assets/projects/raioh.png", import.meta.url).href,
@@ -39,11 +39,12 @@ const Projects = () => {
             type: "mobile",
             brief: "An android app for booking chauffeur services and deliveries, with google maps integration.",
             repo: "https://github.com/cjalanano-dev/Chauffeur-Project",
+            image: new URL("../assets/projects/chauffeur.png", import.meta.url).href,
         },
         {
-            title: "Lorem Ipsum",
-            type: "console",
-            brief: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+            title: "Coming Soon",
+            type: "Website",
+            brief: "This space is reserved for future projects. Stay tuned!",
             repo: "#",
         },
     ];
