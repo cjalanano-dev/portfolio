@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 import { FaGithub, FaLinkedin, FaEnvelope, FaLocationDot, FaFileArrowDown, FaInstagram, FaFacebook } from "react-icons/fa6";
 
 const mono = {
@@ -21,6 +21,46 @@ const Contact = () => {
     const [status, setStatus] = useState("idle"); // idle/sending/success/error
     const [errorMsg, setErrorMsg] = useState("");
 
+    // Form validation state
+    const [values, setValues] = useState({ name: "", email: "", message: "" });
+    const [touched, setTouched] = useState({ name: false, email: false, message: false });
+    const [fieldErrors, setFieldErrors] = useState({ name: "", email: "", message: "" });
+
+    const nameRef = useRef(null);
+    const emailRef = useRef(null);
+    const messageRef = useRef(null);
+
+    const emailRegex = /^(?:[a-zA-Z0-9_'^&\/+-])+(?:\.(?:[a-zA-Z0-9_'^&\/+-]+))*@(?:(?:[a-zA-Z0-9-]+\.)+[a-zA-Z]{2,})$/;
+
+    const validate = (nextValues) => {
+        const v = nextValues ?? values;
+        const errs = { name: "", email: "", message: "" };
+        if (!v.name.trim()) errs.name = "Name is required";
+        if (!v.email.trim()) errs.email = "Email is required";
+        else if (!emailRegex.test(v.email.trim())) errs.email = "Enter a valid email";
+        if (!v.message.trim()) errs.message = "Message is required";
+        else if (v.message.trim().length < 10) errs.message = "Message must be at least 10 characters";
+        return errs;
+    };
+
+    const hasErrors = (errs) => Object.values(errs).some(Boolean);
+
+    const handleBlur = (e) => {
+        const { name } = e.currentTarget;
+        setTouched((t) => ({ ...t, [name]: true }));
+        const errs = validate();
+        setFieldErrors(errs);
+    };
+
+    const handleInput = (e) => {
+        const { name, value } = e.currentTarget;
+        const next = { ...values, [name]: value };
+        setValues(next);
+        if (touched[name]) {
+            setFieldErrors(validate(next));
+        }
+    };
+
     const onSubmit = async (e) => {
         e.preventDefault();
         const form = e.currentTarget; 
@@ -33,6 +73,19 @@ const Contact = () => {
         const name = (fd.get('name') || '').toString();
         const from = (fd.get('email') || '').toString();
         const message = (fd.get('message') || '').toString();
+
+        // Validate client-side
+        const current = { name, email: from, message };
+        const errs = validate(current);
+        setFieldErrors(errs);
+        setTouched({ name: true, email: true, message: true });
+        if (hasErrors(errs)) {
+            // focus first invalid
+            if (errs.name && nameRef.current) nameRef.current.focus();
+            else if (errs.email && emailRef.current) emailRef.current.focus();
+            else if (errs.message && messageRef.current) messageRef.current.focus();
+            return;
+        }
 
         if (!endpoint) {
             setStatus('error');
@@ -65,6 +118,9 @@ const Contact = () => {
 
             setStatus('success');
             form.reset();
+            setValues({ name: "", email: "", message: "" });
+            setTouched({ name: false, email: false, message: false });
+            setFieldErrors({ name: "", email: "", message: "" });
             setTimeout(() => {
                 window.location.href = "/";;
             }, 2000);
@@ -193,42 +249,61 @@ const Contact = () => {
                                 <div>
                                     <label htmlFor="name" className="block text-sm mb-1" style={{ color: 'var(--muted)' }}>name:</label>
                                     <input
+                                        ref={nameRef}
                                         id="name"
                                         name="name"
                                         type="text"
                                         autoComplete="name"
                                         className="w-full rounded-md px-3 py-2 border bg-transparent"
-                                        style={{ borderColor: 'var(--border)', color: 'var(--text)' }}
-                                        onFocus={(e) => (e.currentTarget.style.borderColor = 'var(--accent)')}
-                                        onBlur={(e) => (e.currentTarget.style.borderColor = 'var(--border)')}
+                                        style={{ borderColor: fieldErrors.name && touched.name ? 'salmon' : 'var(--border)', color: 'var(--text)' }}
+                                        aria-invalid={Boolean(fieldErrors.name) && touched.name}
+                                        aria-describedby="name-error"
+                                        value={values.name}
+                                        onInput={handleInput}
+                                        onBlur={handleBlur}
                                     />
+                                    {touched.name && fieldErrors.name && (
+                                        <p id="name-error" className="mt-1 text-xs" style={{ color: 'salmon' }}>{fieldErrors.name}</p>
+                                    )}
                                 </div>
                                 <div>
                                     <label htmlFor="email" className="block text-sm mb-1" style={{ color: 'var(--muted)' }}>email:</label>
                                     <input
-                                        required
+                                        ref={emailRef}
                                         id="email"
                                         name="email"
                                         type="email"
                                         autoComplete="email"
                                         className="w-full rounded-md px-3 py-2 border bg-transparent"
-                                        style={{ borderColor: 'var(--border)', color: 'var(--text)' }}
-                                        onFocus={(e) => (e.currentTarget.style.borderColor = 'var(--accent)')}
-                                        onBlur={(e) => (e.currentTarget.style.borderColor = 'var(--border)')}
+                                        style={{ borderColor: fieldErrors.email && touched.email ? 'salmon' : 'var(--border)', color: 'var(--text)' }}
+                                        aria-invalid={Boolean(fieldErrors.email) && touched.email}
+                                        aria-describedby="email-error"
+                                        value={values.email}
+                                        onInput={handleInput}
+                                        onBlur={handleBlur}
                                     />
+                                    {touched.email && fieldErrors.email && (
+                                        <p id="email-error" className="mt-1 text-xs" style={{ color: 'salmon' }}>{fieldErrors.email}</p>
+                                    )}
                                 </div>
                                 <div>
                                     <label htmlFor="message" className="block text-sm mb-1" style={{ color: 'var(--muted)' }}>message:</label>
                                     <textarea
-                                        required
+                                        ref={messageRef}
                                         id="message"
                                         name="message"
                                         rows={4}
                                         className="w-full rounded-md px-3 py-2 border bg-transparent resize-y"
-                                        style={{ borderColor: 'var(--border)', color: 'var(--text)' }}
-                                        onFocus={(e) => (e.currentTarget.style.borderColor = 'var(--accent)')}
-                                        onBlur={(e) => (e.currentTarget.style.borderColor = 'var(--border)')}
+                                        style={{ borderColor: fieldErrors.message && touched.message ? 'salmon' : 'var(--border)', color: 'var(--text)' }}
+                                        aria-invalid={Boolean(fieldErrors.message) && touched.message}
+                                        aria-describedby="message-error"
+                                        value={values.message}
+                                        onInput={handleInput}
+                                        onBlur={handleBlur}
                                     />
+                                    {touched.message && fieldErrors.message && (
+                                        <p id="message-error" className="mt-1 text-xs" style={{ color: 'salmon' }}>{fieldErrors.message}</p>
+                                    )}
                                 </div>
                             </div>
                             <button

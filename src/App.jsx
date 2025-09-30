@@ -16,7 +16,6 @@ function AppShell() {
   const prevLocation = useRef({ pathname: location.pathname, search: location.search, hash: location.hash });
 
   useEffect(() => {
-    // Simulate a short initial loading to show the animation elegantly
     if (firstPaint.current) {
       const t = setTimeout(() => {
         setLoading(false);
@@ -34,18 +33,15 @@ function AppShell() {
 
       if (pathOrSearchChanged) {
         setLoading(true);
-        // Always scroll to top on real navigations
         if (typeof window !== 'undefined') {
           window.scrollTo({ top: 0, behavior: 'smooth' });
         }
         const t = setTimeout(() => setLoading(false), 400);
         return () => clearTimeout(t);
       } else {
-        // Only hash changed (in-page anchor). Do not trigger loader.
         setLoading(false);
       }
     }
-    // Update the previous location tracker after handling
     prevLocation.current = {
       pathname: location.pathname,
       search: location.search,
