@@ -90,8 +90,8 @@ const About = () => {
                                             <div className="mt-1 text-xl" style={{ color: 'var(--accent)' }}><FaWandMagicSparkles /></div>
                                             <div>
                                                 <h3 className="text-2xl sm:text-3xl font-semibold tracking-tight accent-underline" style={{ color: 'var(--text)' }}>Introduction</h3>
-                                                <p className="mt-3 text-justify sm:mt-4 text-base sm:text-lg" style={{ color: 'var(--muted)' }}>
-                                                    I’m Carlos James Alanano, a Computer Science student and backend developer focused on building scalable systems and mobile applications. My work includes developing the backend and Android apps with Java or Kotlin. I’m passionate about creating efficient, user-friendly solutions and learning modern practices in software engineering. My goal is to grow as a software engineer while continuously building impactful projects.
+                                                <p className="mt-3 sm:mt-4 text-base sm:text-lg" style={{ color: 'var(--muted)' }}>
+                                                    I’m Carlos James Alanano, a Computer Science student and a developer focused on building scalable systems and mobile applications. My work includes developing the backend and Android apps with Java or Kotlin. I’m passionate about creating efficient, user-friendly solutions and learning modern practices in software engineering. My goal is to grow as a software engineer while continuously building impactful projects.
                                                 </p>
                                                 <div className="mt-5 flex flex-wrap justify-start gap-3">
                                                     <Link to="/projects" className="px-4 py-2 rounded-md inline-flex items-center gap-2" style={{ background: 'var(--accent)', color: '#001015' }}>

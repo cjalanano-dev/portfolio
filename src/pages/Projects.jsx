@@ -4,36 +4,6 @@ import { FaImage, FaGithub, FaArrowUpRightFromSquare } from "react-icons/fa6";
 const Projects = () => {
     const projects = [
         {
-            title: "Blockchain Voting Simulator",
-            type: "web", 
-            brief: "An experimental web app simulating how a blockchain-based voting system could work.",
-            live: "https://blockvote-sim.vercel.app", 
-            repo: "https://github.com/cjalanano-dev/Blockchain-Voting-Simulator", 
-            image: new URL("../assets/projects/blockvote.png", import.meta.url).href,
-        },
-        {
-            title: "F1 Lap Time Calculator",
-            type: "console",
-            brief: "A simple F1 lap time calculator with factors like weather, fuel load, and tire compound.",
-            repo: "https://github.com/cjalanano-dev/F1-laptime-calculator",
-            image: new URL("../assets/projects/laptime.png", import.meta.url).href,
-        },
-        {
-            title: "Inside Style Web Design",
-            type: "web",
-            brief: "A modern, responsive website made on Frontline Business Solutions, Inc. during my internship.",
-            live: "https://inside-style.vercel.app",
-            repo: "https://github.com/cjalanano-dev/Inside-Style",
-            image: new URL("../assets/projects/inside.png", import.meta.url).href,
-        },
-        {
-            title: "Chauffeur App",
-            type: "mobile",
-            brief: "An android app for booking chauffeur services and deliveries, with google maps integration.",
-            repo: "https://github.com/cjalanano-dev/Chauffeur-Project",
-            image: new URL("../assets/projects/chauffeur.png", import.meta.url).href,
-        },
-        {
             title: "Coming Soon",
             type: "Website",
             brief: "This space is reserved for future projects. Stay tuned!",
