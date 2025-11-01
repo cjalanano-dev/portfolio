@@ -146,14 +146,12 @@ const About = () => {
                         </div>
                         <div className="grid gap-4 sm:gap-5 md:grid-cols-2">
                             {[
-                                "Backend Development",
+                                "Web Development",
                                 "Mobile App Development",
                                 "Python",
-                                "JavaScript / React",
+                                "Java / C#",
                                 "Database Management",
                                 "Version Control (Git)",
-                                "Web Development",
-                                "Java / Kotlin",
                             ].map((s) => (
                                 <div key={s} className="p-4 sm:p-5 card-elevate flex items-center gap-3" style={cardStyle}>
                                     <span style={{ width: 8, height: 8, borderRadius: 9999, background: "var(--accent)" }} />
@@ -172,7 +170,7 @@ const About = () => {
                         </div>
                         <div className="grid gap-4 sm:gap-5 lg:grid-cols-2">
                             {[{
-                                role: "Grade 11 Representative",
+                                role: "Representative",
                                 org: "Club of Programmers",
                                 period: "2023 – 2024",
                                 points: [
@@ -223,7 +221,7 @@ const About = () => {
                 </section>
 
                 {/* 4. Services offered */}
-                <section id="services" style={{ scrollMarginTop: "6rem" }} className="mt-10 sm:mt-12">
+                {/* <section id="services" style={{ scrollMarginTop: "6rem" }} className="mt-10 sm:mt-12">
                     <div className="mx-auto max-w-5xl">
                         <h3 className="text-2xl sm:text-3xl font-semibold tracking-tight mb-4 accent-underline" style={{ color: "var(--text)" }}>Services Offered</h3>
                         <div className="grid gap-4 sm:gap-5 md:grid-cols-2 lg:grid-cols-3">
@@ -242,7 +240,7 @@ const About = () => {
                             ))}
                         </div>
                     </div>
-                </section>
+                </section> */}
             </div>
         </section>
         {/* Back to top button removed */}

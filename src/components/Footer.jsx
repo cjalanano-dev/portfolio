@@ -28,7 +28,7 @@ const Footer = () => (
                         Carlos James <span style={{ color: 'var(--accent)' }}>Alanano</span>
                     </div>
                     <div className="text-sm mt-1" style={{ color: 'var(--muted)' }}>
-                        CS Student · Backend Developer · AI Enthusiast
+                        CS Student · Developer · AI Enthusiast
                     </div>
                 </div>
 

@@ -4,9 +4,9 @@ import { FaImage, FaGithub, FaArrowUpRightFromSquare } from "react-icons/fa6";
 const Projects = () => {
     const projects = [
         {
-            title: "Coming Soon",
-            type: "Website",
-            brief: "This space is reserved for future projects. Stay tuned!",
+            title: "Loom",
+            type: "web",
+            brief: "A website that helps students understand CS through a better curriculum and practical learning.",
             repo: "#",
         },
     ];

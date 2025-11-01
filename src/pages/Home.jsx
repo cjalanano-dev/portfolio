@@ -21,7 +21,7 @@ const Home = () => {
             Building & Learning, <br /> One Project at a Time
           </h2>
           <p className="max-w-2xl text-base sm:text-lg" style={{ color: "var(--muted)" }}>
-            Hi, I’m <span style={{ color: "var(--accent)" }}>Carlos James Alanano</span>. I design and develop scalable backend systems and mobile apps. I’m passionate about creating dependable solutions and continuously improving my skills in modern software engineering.
+            Hi, I’m <span style={{ color: "var(--accent)" }}>Carlos James Alanano</span>. I develop useful applications that people can use to improve their learning about CS. I’m passionate about creating solutions that helps others and continuously improving my skills in software engineering.
           </p>
           <div className="flex flex-wrap items-center justify-center gap-3 sm:gap-4 pt-1 sm:pt-2">
             <Link
@@ -57,7 +57,7 @@ const Home = () => {
             </Link>
           </div>
           <div className="mt-8 sm:mt-10 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-2.5 sm:gap-3">
-            {["HTML", "CSS", "JavaScript", "Python", "Java", "Kotlin"].map((s) => (
+            {["HTML", "CSS", "JavaScript", "Python", "Java", "C#"].map((s) => (
               <span
                 key={s}
                 className="px-2.5 sm:px-3 py-1 rounded-full text-xs sm:text-sm"
@@ -79,7 +79,7 @@ const Home = () => {
             <div className="p-5 sm:p-6 md:p-8">
               <h3 className="text-2xl sm:text-3xl font-semibold tracking-tight accent-underline" style={{ color: "var(--text)" }}>About Me</h3>
               <p className="mt-3 sm:mt-4 text-base sm:text-lg" style={{ color: "var(--muted)" }}>
-                I’m a Computer Science student and backend developer passionate about building reliable systems and  mobile applications. I enjoy turning ideas into real-world solutions while constantly exploring ways to grow as a software engineer.
+                I’m a Computer Science student and developer passionate about building helpful systems for others. I enjoy turning ideas into real-world solutions while constantly exploring ways to grow as a software engineer.
               </p>
               <div className="mt-5">
                 <Link to="/about#intro" className="inline-flex items-center gap-2 px-4 py-2 rounded-md border card-elevate" style={{ borderColor: "var(--accent)", color: "var(--accent)" }}>
@@ -91,10 +91,10 @@ const Home = () => {
         </div>
 
         {/* Skills / Services snapshot */}
-        <div className="mt-16 sm:mt-20">
-          <div className="grid gap-5 sm:gap-6 md:grid-cols-2">
+        {/* <div className="mt-16 sm:mt-20">
+          <div className="grid gap-5 sm:gap-6 md:grid-cols-2"> */}
             {/* Skills */}
-            <div className="card-elevate" style={cardStyle}>
+            {/* <div className="card-elevate" style={cardStyle}>
               <div className="p-5 sm:p-6 md:p-7">
                 <h3 className="text-xl sm:text-2xl font-semibold accent-underline" style={{ color: "var(--text)" }}>Skills</h3>
                 <div className="mt-4 grid gap-3">
@@ -106,9 +106,9 @@ const Home = () => {
                   ))}
                 </div>
               </div>
-            </div>
+            </div> */}
             {/* Services */}
-            <div className="card-elevate" style={cardStyle}>
+            {/* <div className="card-elevate" style={cardStyle}>
               <div className="p-5 sm:p-6 md:p-7">
                 <h3 className="text-xl sm:text-2xl font-semibold accent-underline" style={{ color: "var(--text)" }}>Services</h3>
                 <div className="mt-4 grid gap-3">
@@ -127,9 +127,9 @@ const Home = () => {
                   ))}
                 </div>
               </div>
-            </div>
-          </div>
-        </div>
+            </div> */}
+          {/* </div>
+        </div> */}
 
         {/* Featured Projects preview */}
         <div className="mt-16 sm:mt-20">
@@ -139,9 +139,7 @@ const Home = () => {
           </div>
           <div className="grid gap-4 sm:gap-5 md:grid-cols-2 lg:grid-cols-3">
             {[
-              { title: "Blockchain Voting Simulator", desc: "An experimental web app simulating how a blockchain-based voting system could work.", tags: ["Blockchain", "JavaScript"] },
-              { title: "F1 Lap Time Calculator", desc: "A simple F1 lap time calculator with factors like weather, fuel load, and tire compound.", tags: ["Python", "F1"] },
-              { title: "Inside Style Web Design", desc: "A modern, responsive website made on Frontline Business Solutions, Inc. during my internship.", tags: ["HTML", "CSS"] },
+              { title: "Loom", desc: "A website that helps students understand CS through a better curriculum and practical learning.", tags: ["Web Development", "PWA"] },
             ].map((p) => (
               <Link key={p.title} to="/projects" className="block card-elevate" style={cardStyle}>
                 <div className="p-4 sm:p-5">

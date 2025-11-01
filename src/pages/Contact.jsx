@@ -149,41 +149,6 @@ const Contact = () => {
 
                     {/* Body */}
                     <div className="p-5 sm:p-6">
-                        {/* Title */}
-                        <div className="mb-4 sm:mb-5" style={mono}>
-                            <div className="text-xs sm:text-sm" style={{ color: 'var(--muted)' }}>
-                                $ contact --info
-                            </div>
-                            <h1 className="mt-1 text-2xl sm:text-3xl font-semibold" style={{ color: 'var(--text)' }}>
-                                Let's Connect
-                            </h1>
-                        </div>
-
-                        {/* Info pills */}
-                        <div className="space-y-2 sm:space-y-2.5">
-                            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-md border" style={{ borderColor: 'var(--border)', background: 'rgba(15,23,42,0.55)', color: 'var(--muted)' }}>
-                                <FaLocationDot /> <span>San Pablo, Laguna, PH</span>
-                            </div>
-                            <a
-                                href={`mailto:${email}`}
-                                className="inline-flex items-center gap-2 px-3 py-1.5 rounded-md border"
-                                style={{ borderColor: 'var(--border)', background: 'rgba(15,23,42,0.55)', color: 'var(--text)' }}
-                                onMouseEnter={(e) => (e.currentTarget.style.borderColor = 'var(--accent)')}
-                                onMouseLeave={(e) => (e.currentTarget.style.borderColor = 'var(--border)')}
-                            >
-                                <FaEnvelope /> <span>{email}</span>
-                            </a>
-                            <a
-                                href={resumeHref}
-                                className="inline-flex items-center gap-2 px-3 py-1.5 rounded-md border"
-                                style={{ borderColor: 'var(--border)', background: 'rgba(15,23,42,0.55)', color: 'var(--text)' }}
-                                onMouseEnter={(e) => (e.currentTarget.style.borderColor = 'var(--accent)')}
-                                onMouseLeave={(e) => (e.currentTarget.style.borderColor = 'var(--border)')}
-                                download
-                            >
-                                <FaFileArrowDown /> <span>Download CV</span>
-                            </a>
-                        </div>
 
                         {/* Social links */}
                         <div className="mt-5" style={mono}>
