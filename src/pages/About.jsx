@@ -172,7 +172,7 @@ const About = () => {
                                 {[{
                                     role: "Representative/Treasurer",
                                     org: "Club of Programmers",
-                                    period: "2023 – 2025",
+                                    period: "Sept. 2023 – June 2025",
                                     points: [
                                         "Collaborated with club officers in handling club funds",
                                         "Helped organize club events within the organization",

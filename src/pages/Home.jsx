@@ -139,6 +139,7 @@ const Home = () => {
           </div>
           <div className="grid gap-4 sm:gap-5 md:grid-cols-2 lg:grid-cols-3">
             {[
+              { title: "Stampede", desc: "A console-based chess engine made in C# for my final project in Fundamentals of Programming.", tags: ["Console", "C#"] },
               { title: "Loom", desc: "A website that helps students understand CS through a better curriculum and practical learning.", tags: ["Web Development", "PWA"] },
             ].map((p) => (
               <Link key={p.title} to="/projects" className="block card-elevate" style={cardStyle}>
