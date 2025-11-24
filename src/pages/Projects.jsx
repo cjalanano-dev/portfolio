@@ -4,6 +4,12 @@ import { FaImage, FaGithub, FaArrowUpRightFromSquare } from "react-icons/fa6";
 const Projects = () => {
     const projects = [
         {
+            title: "Stampede",
+            type: "console",
+            brief: "A console-based chess engine made in C# for my final project in Fundamentals of Programming.",
+            repo: "https://github.com/cjalanano-dev/Stampede",
+        },
+        {
             title: "Loom",
             type: "web",
             brief: "A website that helps students understand CS through a better curriculum and practical learning.",
