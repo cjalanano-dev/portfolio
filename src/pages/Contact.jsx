@@ -1,4 +1,5 @@
 import React, { useRef, useState } from "react";
+import emailjs from '@emailjs/browser';
 import { FaGithub, FaLinkedin, FaEnvelope, FaLocationDot, FaFileArrowDown, FaInstagram, FaFacebook } from "react-icons/fa6";
 
 const mono = {
@@ -13,9 +14,10 @@ const Contact = () => {
     const facebook = "https://facebook.com/mrztdsh.dev"; 
     const resumeHref = "/";
 
-    // Formspree configuration
-    const formspreeId = import.meta.env.VITE_FORMSPREE_ID;
-    const endpoint = formspreeId ? `https://formspree.io/f/${formspreeId}` : null;
+    // EmailJS configuration
+    const serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID;
+    const templateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
+    const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
 
     // UI status
     const [status, setStatus] = useState("idle"); // idle/sending/success/error
@@ -86,35 +88,16 @@ const Contact = () => {
             else if (errs.message && messageRef.current) messageRef.current.focus();
             return;
         }
-
-        if (!endpoint) {
+        if (!serviceId || !templateId || !publicKey) {
             setStatus('error');
-            setErrorMsg('Form not configured. Please set VITE_FORMSPREE_ID in your .env file.');
+            setErrorMsg('EmailJS not configured. Please set VITE_EMAILJS_SERVICE_ID, VITE_EMAILJS_TEMPLATE_ID, and VITE_EMAILJS_PUBLIC_KEY in your .env file.');
             return;
         }
 
         setStatus('sending');
         setErrorMsg('');
         try {
-            const res = await fetch(endpoint, {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-                'Accept': 'application/json',
-            },
-            body: JSON.stringify({
-                name,
-                email: from,
-                message,
-                subject: `Portfolio inquiry from ${name || 'someone'}`,
-                reply_to: from,
-            }),
-            });
-
-            if (!res.ok) {
-            const data = await res.json().catch(() => ({}));
-            throw new Error(data?.error || `Failed to send message (${res.status})`);
-            }
+            await emailjs.sendForm(serviceId, templateId, form, publicKey);
 
             setStatus('success');
             form.reset();
@@ -122,11 +105,11 @@ const Contact = () => {
             setTouched({ name: false, email: false, message: false });
             setFieldErrors({ name: "", email: "", message: "" });
             setTimeout(() => {
-                window.location.href = "/";;
+                window.location.href = "/";
             }, 2000);
         } catch (err) {
             setStatus('error');
-            setErrorMsg(err?.message || 'Something went wrong. Please try again.');
+            setErrorMsg(err?.text || 'Something went wrong. Please try again.');
         }
     };
 
