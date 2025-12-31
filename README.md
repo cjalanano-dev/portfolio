@@ -6,7 +6,7 @@ Welcome to my portfolio website! This project showcases my skills, experience, a
 
 - Responsive design
 - Project gallery
-- About me section
+- About section
 - Contact form
 
 ## Technologies Used
@@ -16,20 +16,7 @@ Welcome to my portfolio website! This project showcases my skills, experience, a
 - JavaScript
 - React
 - Tailwind CSS
-
-## Contact Form (Formspree)
-
-This project uses Formspree to send contact form submissions directly to your email.
-
-Setup:
-- Create a form on Formspree and copy its form ID (looks like `abcdwxyz`).
-- Copy `.env.example` to `.env` and set `VITE_FORMSPREE_ID`:
-	- VITE_FORMSPREE_ID=your_form_id_here
-- Restart the dev server if it’s running so Vite picks up the env variable.
-
-Notes:
-- If `VITE_FORMSPREE_ID` is not set, the form will show an error on submit.
-- A hidden honeypot field is included to reduce spam.
+- EmailJS
 
 ---
 *Created by Carlos James Alanano, 2025*
