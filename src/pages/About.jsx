@@ -170,13 +170,22 @@ const About = () => {
                             </div>
                             <div className="grid gap-4 sm:gap-5 lg:grid-cols-2">
                                 {[{
-                                    role: "Representative/Treasurer",
+                                    role: "Representative",
                                     org: "Club of Programmers",
-                                    period: "Sept. 2023 – June 2025",
+                                    period: "Sept. 2023 – Aug. 2024",
                                     points: [
-                                        "Collaborated with club officers in handling club funds",
-                                        "Helped organize club events within the organization",
+                                        "Collaborated in organizing programming events and activities",
+                                        "Helped promote coding culture among members",
                                         "Showcased leadership and teamwork skills"
+                                    ]
+                                },{
+                                    role: "Treasurer",
+                                    org: "Club of Programmers",
+                                    period: "Aug. 2024 – June 2025",
+                                    points: [
+                                        "Collaborated with other officers for financial planning",
+                                        "Helped organize the budget for events and activities",
+                                        "Showcased financial management and organizational skills"
                                     ]
                                 }, {
                                     role: "Senior High School Work Immersion/Intern",
@@ -195,15 +204,6 @@ const About = () => {
                                         "Leading backend development for web applications",
                                         "Designing RESTful APIs with Laravel",
                                         "Showcasing maturity and technical skills in a team setting"
-                                    ]
-                                }, {
-                                    role: "Backend Developer Intern",
-                                    org: "Codebility",
-                                    period: "Nov. 2025 - Present",
-                                    points: [
-                                        "Developing backend for web applications (JavaScript)",
-                                        "Collaborating with fellow codevs to improve my skills",
-                                        "Honing my soft skills for future job opportunities"
                                     ]
                                 }].map((exp) => (
                                     <div key={exp.role} className="p-4 sm:p-5 card-elevate" style={cardStyle}>

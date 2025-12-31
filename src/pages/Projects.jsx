@@ -1,19 +1,44 @@
 import React from "react";
 import { FaImage, FaGithub, FaArrowUpRightFromSquare } from "react-icons/fa6";
+import stampede from "../assets/img/stampede.png";
+import raioh from "../assets/img/raioh.png";
+import inside from "../assets/img/inside-style.png";
+
 
 const Projects = () => {
     const projects = [
         {
-            title: "Stampede",
+            title: "Stampede - Console Based Chess Engine",
             type: "console",
             brief: "A console-based chess engine made in C# for my final project in Fundamentals of Programming.",
             repo: "https://github.com/cjalanano-dev/Stampede",
+            image: stampede,
         },
         {
             title: "Loom",
             type: "web",
             brief: "A website that helps students understand CS through a better curriculum and practical learning.",
-            repo: "#",
+            repo: "https://github.com/cjalanano-dev/loom-dev",
+        },
+        {
+            title: "Inside Style (Concept Design)",
+            type: "web",
+            brief: "Web design concept for a fashion e-commerce platform. Built during my work immersion with FBS.",
+            repo: "https://github.com/cjalanano-dev/inside-style",
+            image: inside,
+        },
+        {
+            title: "Raioh Designs (Concept Design)",
+            type: "web",
+            brief: "Web design concept for a freelance graphic designer's portfolio site. Built during my work immersion with FBS.",
+            repo: "https://github.com/cjalanano-dev/raioh-designs",
+            image: raioh,
+        },
+        {
+            title: "Java Concept Compilation",
+            type: "console",
+            brief: "A console app that compiles what I learned in Computer Programming 1 (SHS).",
+            repo: "https://github.com/cjalanano-dev/Java-Console-Project",
         },
     ];
 
