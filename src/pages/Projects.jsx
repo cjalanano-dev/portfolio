@@ -3,6 +3,7 @@ import { FaImage, FaGithub, FaArrowUpRightFromSquare } from "react-icons/fa6";
 import stampede from "../assets/img/stampede.png";
 import raioh from "../assets/img/raioh.png";
 import inside from "../assets/img/inside-style.png";
+import portfolio from "../assets/img/portfolio.png";
 
 
 const Projects = () => {
@@ -13,6 +14,13 @@ const Projects = () => {
             brief: "A console-based chess engine made in C# for my final project in Fundamentals of Programming.",
             repo: "https://github.com/cjalanano-dev/Stampede",
             image: stampede,
+        },
+        {
+            title: "Personal Portfolio Website",
+            type: "web",
+            brief: "My personal portfolio website built with React.js and Tailwind CSS to showcase my projects and skills.",
+            live: "https://cjalanano-dev.vercel.app",
+            image: portfolio,
         },
         {
             title: "Inside Style (Concept Design)",
