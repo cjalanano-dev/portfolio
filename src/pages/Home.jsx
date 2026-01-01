@@ -57,7 +57,7 @@ const Home = () => {
             </Link>
           </div>
           <div className="mt-8 sm:mt-10 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-2.5 sm:gap-3">
-            {["HTML", "CSS", "JavaScript", "Python", "Java", "C#"].map((s) => (
+            {["C#", "Java", "Python", "HTML", "CSS", "JavaScript"].map((s) => (
               <span
                 key={s}
                 className="px-2.5 sm:px-3 py-1 rounded-full text-xs sm:text-sm"
@@ -140,7 +140,6 @@ const Home = () => {
           <div className="grid gap-4 sm:gap-5 md:grid-cols-2 lg:grid-cols-3">
             {[
               { title: "Stampede", desc: "A console-based chess engine made in C# for my final project in Fundamentals of Programming.", tags: ["Console", "C#"] },
-              { title: "Loom", desc: "A website that helps students understand CS through a better curriculum and practical learning.", tags: ["Web Development", "PWA"] },
             ].map((p) => (
               <Link key={p.title} to="/projects" className="block card-elevate" style={cardStyle}>
                 <div className="p-4 sm:p-5">

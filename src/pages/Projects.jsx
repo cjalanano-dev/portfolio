@@ -15,23 +15,17 @@ const Projects = () => {
             image: stampede,
         },
         {
-            title: "Loom",
-            type: "web",
-            brief: "A website that helps students understand CS through a better curriculum and practical learning.",
-            repo: "https://github.com/cjalanano-dev/loom-dev",
-        },
-        {
             title: "Inside Style (Concept Design)",
             type: "web",
             brief: "Web design concept for a fashion e-commerce platform. Built during my work immersion with FBS.",
-            repo: "https://github.com/cjalanano-dev/inside-style",
+            live: "https://inside-style.vercel.app",
             image: inside,
         },
         {
             title: "Raioh Designs (Concept Design)",
             type: "web",
             brief: "Web design concept for a freelance graphic designer's portfolio site. Built during my work immersion with FBS.",
-            repo: "https://github.com/cjalanano-dev/raioh-designs",
+            live: "https://raioh-designs.vercel.app",
             image: raioh,
         },
         {
