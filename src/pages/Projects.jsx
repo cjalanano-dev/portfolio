@@ -10,7 +10,7 @@ import first_java from "../assets/img/first_java.png";
 const Projects = () => {
     const projects = [
         {
-            title: "Zeta Command Center",
+            title: "Zeta Command Center [ongoing]",
             type: "desktop",
             brief: "A desktop application built with C# and Windows Forms serving as my personal life OS command center.",
             repo: "https://github.com/cjalanano-dev/zcc"
