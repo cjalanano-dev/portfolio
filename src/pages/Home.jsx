@@ -21,7 +21,7 @@ const Home = () => {
             Building & Learning, <br /> One Project at a Time
           </h2>
           <p className="max-w-2xl text-base sm:text-lg" style={{ color: "var(--muted)" }}>
-            Hi, I’m <span style={{ color: "var(--accent)" }}>Carlos James Alanano</span>. I develop useful applications that people can use to improve their learning about CS. I’m passionate about creating solutions that helps others and continuously improving my skills in software engineering.
+            Hi, I’m <span style={{ color: "var(--accent)" }}>Carlos James Alanano</span>. I view programming as a weapon for solving real-world problems. I don't write code for the sake of it, I develop software designed to sharpen logical reasoning and computer science understanding. I am driven by mastery, discipline, and the pursuit of building software that actually works.
           </p>
           <div className="flex flex-wrap items-center justify-center gap-3 sm:gap-4 pt-1 sm:pt-2">
             <Link
@@ -57,7 +57,7 @@ const Home = () => {
             </Link>
           </div>
           <div className="mt-8 sm:mt-10 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-2.5 sm:gap-3">
-            {["C#", "Java", "Python", "HTML", "CSS", "JavaScript"].map((s) => (
+            {["C#", "Python", "SQL", "HTML", "CSS", "JavaScript"].map((s) => (
               <span
                 key={s}
                 className="px-2.5 sm:px-3 py-1 rounded-full text-xs sm:text-sm"
@@ -91,14 +91,14 @@ const Home = () => {
         </div>
 
         {/* Skills / Services snapshot */}
-        {/* <div className="mt-16 sm:mt-20">
-          <div className="grid gap-5 sm:gap-6 md:grid-cols-2"> */}
+        <div className="mt-16 sm:mt-20">
+          <div className="grid gap-5 sm:gap-6 md:grid-cols-2">
             {/* Skills */}
-            {/* <div className="card-elevate" style={cardStyle}>
+            <div className="card-elevate" style={cardStyle}>
               <div className="p-5 sm:p-6 md:p-7">
                 <h3 className="text-xl sm:text-2xl font-semibold accent-underline" style={{ color: "var(--text)" }}>Skills</h3>
                 <div className="mt-4 grid gap-3">
-                  {["Backend Development", "Mobile App Development", "Database Management", "Web Development"].map((s) => (
+                  {["C# & .NET Ecosystem", "Object-Oriented Programming", "Data Structures & Algorithms", "Web Development"].map((s) => (
                     <div key={s} className="flex items-center gap-3 p-3 rounded-md border" style={{ borderColor: "var(--border)" }}>
                       <span style={{ width: 8, height: 8, borderRadius: 9999, background: "var(--accent)" }} />
                       <div className="font-medium" style={{ color: "var(--text)" }}>{s}</div>
@@ -106,16 +106,16 @@ const Home = () => {
                   ))}
                 </div>
               </div>
-            </div> */}
+            </div> 
             {/* Services */}
-            {/* <div className="card-elevate" style={cardStyle}>
+            <div className="card-elevate" style={cardStyle}>
               <div className="p-5 sm:p-6 md:p-7">
                 <h3 className="text-xl sm:text-2xl font-semibold accent-underline" style={{ color: "var(--text)" }}>Services</h3>
                 <div className="mt-4 grid gap-3">
                   {[
-                    { title: "Backend Development", desc: "Designing RESTful APIs & authentication" },
-                    { title: "Mobile App Development", desc: "Building mobile applications with a focus on user experience and performance" },
-                    { title: "Database Design & Management", desc: "Designing efficient database schemas and managing SQL databases for optimal performance" },
+                    { title: "Custom Software Engineering", desc: "Building high-performance tools and custom software from the ground up." },
+                    { title: "System Architecture & Design", desc: "Designing scalable, modular software systems using strict Object-Oriented Programming (OOP) principles." },
+                    { title: "Web Application Development", desc: "Developing functional and logical web solutions with a focus on backend stability and performance." },
                   ].map((s) => (
                     <div key={s.title} className="flex items-start gap-3 p-3 rounded-md border" style={{ borderColor: "var(--border)" }}>
                       <div style={{ color: "var(--accent)" }}>{s.icon}</div>
@@ -127,9 +127,9 @@ const Home = () => {
                   ))}
                 </div>
               </div>
-            </div> */}
-          {/* </div>
-        </div> */}
+            </div>
+          </div>
+        </div>
 
         {/* Featured Projects preview */}
         <div className="mt-16 sm:mt-20">
