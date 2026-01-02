@@ -4,10 +4,17 @@ import stampede from "../assets/img/stampede.png";
 import raioh from "../assets/img/raioh.png";
 import inside from "../assets/img/inside-style.png";
 import portfolio from "../assets/img/portfolio.png";
+import first_java from "../assets/img/first_java.png";
 
 
 const Projects = () => {
     const projects = [
+        {
+            title: "Zeta Command Center",
+            type: "desktop",
+            brief: "A desktop application built with C# and Windows Forms serving as my personal life OS command center.",
+            repo: "https://github.com/cjalanano-dev/zcc"
+        },
         {
             title: "Stampede - Console Based Chess Engine",
             type: "console",
@@ -41,6 +48,7 @@ const Projects = () => {
             type: "console",
             brief: "A console app that compiles what I learned in Computer Programming 1 (SHS).",
             repo: "https://github.com/cjalanano-dev/Java-Console-Project",
+            image: first_java,
         },
     ];
 

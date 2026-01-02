@@ -132,7 +132,7 @@ const Home = () => {
         </div>
 
         {/* Featured Projects preview */}
-        <div className="mt-16 sm:mt-20">
+        {/* <div className="mt-16 sm:mt-20">
           <div className="flex items-end justify-between mb-4 sm:mb-5">
             <h3 className="text-2xl sm:text-3xl font-semibold tracking-tight accent-underline" style={{ color: "var(--text)" }}>Featured Projects</h3>
             <Link to="/projects" className="text-sm" style={{ color: "var(--accent)" }}>View all</Link>
@@ -154,7 +154,7 @@ const Home = () => {
               </Link>
             ))}
           </div>
-        </div>
+        </div> */}
       </div>
     </section>
   );
