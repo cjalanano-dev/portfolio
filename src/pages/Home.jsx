@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import React from "react";
 import { FaArrowRight, FaBriefcase, FaDatabase, FaCloud } from "react-icons/fa6";
+import PortfolioAnalysis from "../components/PortfolioAnalysis";
 
 const cardStyle = {
   background: "var(--surface)",
@@ -91,9 +92,8 @@ const Home = () => {
         </div>
 
         {/* Skills / Services snapshot */}
-        <div className="mt-16 sm:mt-20">
+        {/* <div className="mt-16 sm:mt-20">
           <div className="grid gap-5 sm:gap-6 md:grid-cols-2">
-            {/* Skills */}
             <div className="card-elevate" style={cardStyle}>
               <div className="p-5 sm:p-6 md:p-7">
                 <h3 className="text-xl sm:text-2xl font-semibold accent-underline" style={{ color: "var(--text)" }}>Skills</h3>
@@ -107,7 +107,6 @@ const Home = () => {
                 </div>
               </div>
             </div> 
-            {/* Services */}
             <div className="card-elevate" style={cardStyle}>
               <div className="p-5 sm:p-6 md:p-7">
                 <h3 className="text-xl sm:text-2xl font-semibold accent-underline" style={{ color: "var(--text)" }}>Services</h3>
@@ -129,7 +128,9 @@ const Home = () => {
               </div>
             </div>
           </div>
-        </div>
+        </div> */}
+
+        <PortfolioAnalysis />
 
         {/* Featured Projects preview */}
         {/* <div className="mt-16 sm:mt-20">
