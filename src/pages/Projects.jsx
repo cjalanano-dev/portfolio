@@ -44,7 +44,7 @@ const Projects = () => {
             image: raioh,
         },
         {
-            title: "Java Concept Compilation",
+            title: "Java Concepts Compilation",
             type: "console",
             brief: "A console app that compiles what I learned in Computer Programming 1 (SHS).",
             repo: "https://github.com/cjalanano-dev/Java-Console-Project",

@@ -10,8 +10,8 @@ const Contact = () => {
     const email = "cjalanano.dev@gmail.com";
     const github = "https://github.com/cjalanano-dev";
     const linkedin = "https://linkedin.com/in/cjalanano-dev";
-    const instagram = "https://instagram.com/mrztdsh";
-    const facebook = "https://facebook.com/mrztdsh.dev"; 
+    const instagram = "https://instagram.com/mrztdmp";
+    // const facebook = "https://facebook.com/mrztdsh.dev"; 
     const resumeHref = "/";
 
     // EmailJS configuration
@@ -172,7 +172,7 @@ const Contact = () => {
                                 >
                                     <FaInstagram /> <span style={{ ...mono }}>Instagram</span>
                                 </a>
-                                <a
+                                {/* <a
                                     href={facebook}
                                     target="_blank"
                                     rel="noopener noreferrer"
@@ -182,7 +182,7 @@ const Contact = () => {
                                     onMouseLeave={(e) => (e.currentTarget.style.borderColor = 'var(--border)')}
                                 >
                                     <FaFacebook /> <span style={{ ...mono }}>Facebook</span>
-                                </a>
+                                </a> */}
                             </div>
                         </div>
 
