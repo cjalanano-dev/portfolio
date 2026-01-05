@@ -123,7 +123,7 @@ const About = () => {
                                     period: "2023 – 2025",
                                     summary: "Web development, Java and C# programming, databases, and foundational IT skills."
                                 }, {
-                                    degree: "Bachelor of Science in Computer Science",
+                                    degree: "BSc. in Computer Science",
                                     school: "Laguna State Polytechnic University",
                                     period: "2025 - Present",
                                     summary: "Core CS foundations, data structures, algorithms, and software engineering practices."
