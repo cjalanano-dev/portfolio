@@ -10,12 +10,6 @@ import first_java from "../assets/img/first_java.png";
 const Projects = () => {
     const projects = [
         {
-            title: "Citadel",
-            type: "desktop",
-            brief: "A desktop application built with C# and Windows Forms serving as my personal life OS command center.",
-            repo: "https://github.com/cjalanano-dev/Citadel",
-        },
-        {
             title: "Stampede - Console Based Chess Engine",
             type: "console",
             brief: "A console-based chess engine made in C# for my final project in Fundamentals of Programming.",
