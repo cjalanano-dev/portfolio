@@ -6,10 +6,18 @@ import inside from "../assets/img/inside-style.png";
 import portfolio from "../assets/img/portfolio.png";
 import first_java from "../assets/img/first_java.png";
 import vibe from "../assets/img/vibe.png";
+import zetaspace from "../assets/img/zetaspace.png";
 
 
 const Projects = () => {
     const projects = [
+        {
+            title: "Zeta Space",
+            type: "web",
+            brief: "My Digital Archive, a collection of evolving notes, documentation, and active experiments.",
+            live: "https://zetaspace.netlify.app",
+            image: zetaspace,
+        },
         {
             title: "VIBE: Audio Reactive Visualizer",
             type: "web",
@@ -21,7 +29,7 @@ const Projects = () => {
             title: "Stampede - Console Based Chess Engine",
             type: "console",
             brief: "A console-based chess engine made in C# for my final project in Fundamentals of Programming.",
-            repo: "https://github.com/cjalanano-dev/Stampede",
+            repo: "https://github.com/cjalanano-dev/StampedeChess",
             image: stampede,
         },
         {
