@@ -5,10 +5,18 @@ import raioh from "../assets/img/raioh.png";
 import inside from "../assets/img/inside-style.png";
 import portfolio from "../assets/img/portfolio.png";
 import first_java from "../assets/img/first_java.png";
+import vibe from "../assets/img/vibe.png";
 
 
 const Projects = () => {
     const projects = [
+        {
+            title: "VIBE: Audio Reactive Visualizer",
+            type: "web",
+            brief: "An audio reactive visualizer built with React.js and Three.js.",
+            live: "https://vibe-audio.netlify.app",
+            image: vibe,
+        },
         {
             title: "Stampede - Console Based Chess Engine",
             type: "console",
