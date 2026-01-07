@@ -15,7 +15,7 @@ const Projects = () => {
             title: "Zeta Space",
             type: "web",
             brief: "My Digital Archive, a collection of evolving notes, documentation, and active experiments.",
-            live: "https://zetaspace.netlify.app",
+            live: "https://cjalanano-dev.github.io/zeta-space/",
             image: zetaspace,
         },
         {
